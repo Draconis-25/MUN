@@ -145,7 +145,7 @@ nav a {
 	letter-spacing: 15px;
 }
 
-.text-box a {
+.wbutton {
 	font-size: 16px;
 	color: #f8dcbf;
 	text-transform: uppercase;
@@ -154,7 +154,7 @@ nav a {
 	/* font-weight: 700; */
 }
 
-.text-box a::after{
+.wbutton::after{
 	content: '';
 	width: 0%;
 	height: 2px;
@@ -163,7 +163,7 @@ nav a {
 	margin: auto;
 	transition: 0.3s;
 }
-.text-box a:hover::after {
+.wbutton:hover::after {
 	width: 100%;
 }
 
@@ -256,6 +256,7 @@ footer {
 .container{
 	max-width: 1170px;
 	margin:auto;
+	padding: 3%;
 }
 .row{
 	display: flex;
@@ -445,4 +446,173 @@ img{
     .team-item{
         width: calc(100% - 30px);
     }
+}
+
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+ul{
+	list-style: none;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+.pricing{
+	min-height: 100vh;
+	padding: 100px 0;
+	background-color: #292727;
+	--color-1:#045174;
+	--color-2:#045174;
+	--color-3:#045174;
+	--color-4:#045174;
+}
+.pricing .switch-table{
+	width: 100%;
+	padding:0 15px;
+	text-align: center;
+	margin-bottom: 35px;
+}
+.pricing .switch-table div,
+.pricing .switch-table .custom-switch{
+	display: inline-block;
+}
+.pricing .switch-table .text-monthly,
+.pricing .switch-table .text-yearly{
+	color: #ffffff;
+	text-transform: capitalize;
+	font-size: 18px;
+	transition: color 0.3s ease;
+}
+.pricing .pricing-main:not(.active) .switch-table .text-monthly,
+.pricing .pricing-main.active .switch-table .text-yearly{
+	color: var(--color-4);
+}
+
+.pricing .pricing-main.active .switch-table .custom-switch span{
+    left: calc(100% - 34px);
+}
+.pricing .pricing-table{
+	background-color: #ffffff;
+	width: calc((100% / 3) - 30px);
+	margin:0 15px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.pricing .pricing-table-header{
+	padding: 15px 30px;
+}
+.pricing .style-1 .pricing-table-body ul li i.fa-check,
+.pricing .style-1 .pricing-table-footer a,
+.pricing .style-1 .pricing-table-header{
+   background-color: var(--color-1);
+}
+.pricing .style-2 .pricing-table-body ul li i.fa-check,
+.pricing .style-2 .pricing-table-footer a,
+.pricing .style-2 .pricing-table-header{
+   background-color: var(--color-2);
+}
+.pricing .style-3 .pricing-table-body ul li i.fa-check,
+.pricing .style-3 .pricing-table-footer a,
+.pricing .style-3 .pricing-table-header{
+   background-color: var(--color-3);
+}
+.pricing .pricing-table-header h3{
+	font-size: 30px;
+	color: #ffffff;
+	text-transform: capitalize;
+	font-weight: 600;
+	text-align: center;
+}
+.pricing .pricing-table-price{
+	padding: 40px 0;
+	display: flex;
+}
+
+.pricing .monthly-price{
+	display: flex;
+	padding: 0 30px;
+	justify-content: center;
+	width: 100%;
+	flex-shrink: 0;
+	transition: all 0.5s ease;
+}
+.pricing .pricing-main.active .monthly-price{
+   transform: translateX(-100%);
+}
+
+.pricing .pricing-table-price .currency{
+	font-size: 25px;
+	color: #555555;
+	font-weight: 700;
+	line-height: 1;
+}
+.pricing .pricing-table-price .amount{
+	font-size: 85px;
+	color: #555555;
+	font-weight: 700;
+	line-height: 0.8;
+}
+
+.pricing .pricing-table-body{
+	padding:0 30px;
+}
+.pricing .pricing-table-body ul li{
+	font-weight: 300;
+	color: #777777;
+	margin-bottom: 15px;
+	position: relative;
+	padding-left: 30px;
+}
+.pricing .monthly-features,
+.pricing .yearly-features{
+	display: none;
+}
+.pricing .pricing-main:not(.active) .monthly-features,
+.pricing .pricing-main.active .yearly-features{
+   display: block;
+   animation: fadeIn 0.5s ease forwards;
+}
+@keyframes fadeIn{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+.pricing .pricing-table-body ul li:last-child{
+	margin-bottom: 0;
+}
+.pricing .pricing-table-body ul li i{
+	display: flex;
+	height: 20px;
+	width: 20px;
+	background-color: #bbbbbb;
+	color: #ffffff;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	font-size: 13px;
+	position: absolute;
+	left:0;
+	top:3px;
+}
+.pricing .pricing-table-footer{
+	padding: 30px;
+	text-align: center;
+}
+
+/*responsive*/
+@media(max-width: 991px){
+	.pricing .pricing-table{
+		width: calc(50% - 30px);
+		margin-bottom: 30px;
+	}
+}
+@media(max-width: 767px){
+	.pricing .pricing-table{
+		width: calc(100% - 30px);
+	}
 }
