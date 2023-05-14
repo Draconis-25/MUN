@@ -480,7 +480,7 @@ ul{
 }
 .pricing .switch-table .text-monthly,
 .pricing .switch-table .text-yearly{
-	color: #ffffff;
+	color: #f8ebeb;
 	text-transform: capitalize;
 	font-size: 18px;
 	transition: color 0.3s ease;
@@ -494,7 +494,7 @@ ul{
     left: calc(100% - 34px);
 }
 .pricing .pricing-table{
-	background-color: #ffffff;
+	background-color: #f8ebeb;
 	width: calc((100% / 3) - 30px);
 	margin:0 15px;
 	border-radius: 10px;
@@ -520,7 +520,7 @@ ul{
 }
 .pricing .pricing-table-header h3{
 	font-size: 30px;
-	color: #ffffff;
+	color: #f8dcbf;
 	text-transform: capitalize;
 	font-weight: 600;
 	text-align: center;
@@ -544,13 +544,13 @@ ul{
 
 .pricing .pricing-table-price .currency{
 	font-size: 25px;
-	color: #555555;
+	color: #322F2F;
 	font-weight: 700;
 	line-height: 1;
 }
 .pricing .pricing-table-price .amount{
 	font-size: 85px;
-	color: #555555;
+	color: #322F2F;
 	font-weight: 700;
 	line-height: 0.8;
 }

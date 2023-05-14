@@ -46,12 +46,12 @@
 }
 .option-container.dark {
   /* background: #232223; */
-  color: white;
+  color: #f8ebeb;
 }
 @media (prefers-color-scheme: dark) {
   .option-container:not(.light) {
     /* background: #232223; */
-    color: white;
+    color: #f8ebeb;
   }
 }
 
@@ -109,22 +109,22 @@
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 .option-container .options .option:nth-child(1) {
-  --defaultBackground: #ed5565;
+  --defaultBackground: #045174;
 }
 .option-container .options .option:nth-child(2) {
-  --defaultBackground: #fc6e51;
+  --defaultBackground: #045174;
 }
 .option-container .options .option:nth-child(3) {
-  --defaultBackground: #ffce54;
+  --defaultBackground: #045174;
 }
 .option-container .options .option:nth-child(4) {
-  --defaultBackground: #2ecc71;
+  --defaultBackground: #045174;
 }
 .option-container .options .option:nth-child(5) {
-  --defaultBackground: #5d9cec;
+  --defaultBackground: #045174;
 }
 .option-container .options .option:nth-child(6) {
-  --defaultBackground: #ac92ec;
+  --defaultBackground: #045174;
 }
 .option-container .options .option.active {
   flex-grow: 10000;
@@ -188,7 +188,7 @@
   max-width: 40px;
   height: 40px;
   border-radius: 100%;
-  background-color: white;
+  background-color: #f8ebeb;
   color: var(--defaultBackground);
 }
 .option-container .options .option .label .info {
@@ -196,7 +196,7 @@
   flex-direction: column;
   justify-content: center;
   margin-left: 10px;
-  color: white;
+  color: #f8ebeb;
   white-space: pre;
 }
 .option-container .options .option .label .info > div {
