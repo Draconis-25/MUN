@@ -55,6 +55,13 @@
   }
 }
 
+@media screen and (max-width: 1000px) {
+	.option-container {
+		display: none;
+	}
+
+}
+
 .option-container .options {
   display: flex;
   flex-direction: row;

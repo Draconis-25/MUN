@@ -341,6 +341,10 @@ ul{
 	.Quick-navigation{
 		display: none;
 	}
+
+	.maps-iframe {
+		display: none;
+	}
 }
 
 .container{
@@ -614,5 +618,17 @@ ul{
 @media(max-width: 767px){
 	.pricing .pricing-table{
 		width: calc(100% - 30px);
+	}
+}
+
+.committees-mobile{
+	display: none;
+}
+@media screen and (max-width: 1000px) {
+	.option-container {
+		display: none;
+	}
+	.committees-mobile {
+		display: block;
 	}
 }
