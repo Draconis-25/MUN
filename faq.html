@@ -25,7 +25,7 @@
 				</ul>
 			</div>
 		</div>
-		<nav>
+		<nav style="width: 100%;">
 			<a href="index.html">
 				<!--<img src="resources/AW_logo.png" alt="LOGO"> -->
 				<h1 class="logo">ILERIMUN</h1>
@@ -143,6 +143,25 @@
 		
 	  
 		  <script>
+			//Toggle Mobile Navbar
+
+			function toggleNavbar() {
+				if($("#toggle").hasClass("mdi-menu")) {
+					$("#toggle").removeClass("mdi-menu")
+					$("#toggle").addClass("mdi-close")
+					$("body").css("overflow", "hidden")
+					document.getElementById("mobile-navbar").style.right = 0
+				} else if ($("#toggle").hasClass("mdi-close")) {
+					$("#toggle").removeClass("mdi-close")
+					$("#toggle").addClass("mdi-menu")
+					$("body").css("overflow", "visible")
+					document.getElementById("mobile-navbar").style.right = `-${screen.width}px`
+				}
+			}
+		
+			//Toggle Mobile Navbar
+
+
 			var acc = document.getElementsByClassName("accordion");
 			var i;
 	  
