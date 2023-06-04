@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/committees.css">
+	<link rel="stylesheet" href="css/timer.css">
 	<!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'> -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 	<link rel="stylesheet" type"text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css"
@@ -175,6 +176,24 @@
 				</div>
 			  </div>
 			</div>
+			<div class="timer">
+				<div class="timerDaysContainer timerItem">
+					<label class="timerDays timerCount" id="timerDays">00</label>
+					<label class="timerText">DAYS</label>
+				</div>
+				<div class="timerHoursContainer timerItem">
+					<label class="timerHours timerCount" id="timerHours">00</label>
+					<label class="timerText">HOURS</label>
+				</div>
+				<div class="timerMinutesContainer timerItem">
+					<label class="timerMinutes timerCount" id="timerMinutes">00</label>
+					<label class="timerText">MINUTES</label>
+				</div>
+				<div class="timerSecondsContainer timerItem">
+					<label class="timerSeconds timerCount" id="timerSeconds">00</label>
+					<label class="timerText">SECONDS</label>
+				</div>
+			</div>
 		  </section>
 		<p>
 			
@@ -306,6 +325,27 @@
   	 </div>
 	</footer>
 	<script>
+		// Timer
+		window.onload = () => {
+			const second = 1000
+			const minute = second * 60
+			const hour = minute * 60
+			const day = hour * 24;
+			const endTime = new Date("Sat Jun 06 2024 16:44:01 GMT+0300")
+			setInterval(() => {
+				const distance = endTime.getTime() - Date.now()
+				const days = Math.floor(distance / day)
+				const hours = Math.floor((distance % day) / hour)
+				const minutes = Math.floor((distance % hour) / minute)
+				const seconds = Math.floor((distance % minute) / second)
+				document.getElementById("timerDays").innerText = days.toString()
+				document.getElementById("timerHours").innerText = hours.toString()
+				document.getElementById("timerMinutes").innerText = minutes.toString()
+				document.getElementById("timerSeconds").innerText = seconds.toString()
+			}, 1000)
+		}
+		// Timer
+
 	(function () {
   //////////////////////
   // Utils
