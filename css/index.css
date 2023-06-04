@@ -81,7 +81,7 @@ nav a {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 	font-size: 15px;
-	cursor: default;
+	/* cursor: default; */
 }
 .nav-links ul li::after{
 	content: '';
