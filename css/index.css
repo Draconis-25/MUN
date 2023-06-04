@@ -319,7 +319,7 @@ ul{
 	text-align: center;
 	line-height: 40px;
 	border-radius: 50%;
-	color: #f8dcbf !important;
+	color: #f8dcbf;
 	transition: all 0.5s ease;
 }
 .footer-col .social-links a:hover{
