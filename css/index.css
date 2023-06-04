@@ -168,6 +168,19 @@ nav a {
 	width: 100%;
 }
 
+.mobileTitle {
+	display: none;
+}
+
+@media(max-width: 750px) {
+	.desktopTitle {
+		display: none;
+	}
+	.mobileTitle {
+		display: inherit;
+	}
+}
+
 /* nav .fa{
 	display: none;
 } */
