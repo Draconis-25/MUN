@@ -133,6 +133,12 @@
 .option-container .options .option:nth-child(6) {
   --defaultBackground: #045174;
 }
+.option-container .options .option:nth-child(7) {
+	--defaultBackground: #045174;
+}
+.option-container .options .option:nth-child(8) {
+	--defaultBackground: #045174;
+}
 .option-container .options .option.active {
   flex-grow: 10000;
   transform: scale(1);
