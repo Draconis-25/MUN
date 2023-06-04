@@ -40,9 +40,10 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  height: 100vh;
+  height: auto;
   font-family: "Roboto", sans-serif;
   transition: 0.25s;
+  padding-top: 30px;
 }
 .option-container.dark {
   /* background: #232223; */
