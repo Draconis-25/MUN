@@ -220,7 +220,7 @@ nav a {
 	margin: auto;
 	text-align: center;
 	padding-top: 50px;
-	padding-bottom: 50px;
+	/* padding-bottom: 50px; */
 	background: #001f3d;
 }
 
@@ -236,7 +236,7 @@ nav a {
 	margin: auto;
 	text-align: center;
 	padding-top: 50px;
-	padding-bottom: 50px;
+	/* padding-bottom: 50px; */
 	background: #001f3d;
 }
 
@@ -378,7 +378,7 @@ img{
 .team{
     min-height: 100vh;
     line-height: 1.5;
-    padding:80px 0;
+    padding:0 0;
 }
 .team-item{
     width: calc((100% / 2) - 100px);
