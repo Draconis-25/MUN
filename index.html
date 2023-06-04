@@ -37,7 +37,7 @@
 			<p>The experience you've been waiting for</p>
 			<h1 class="desktopTitle">tevfik ileri religious high school <br> model united nations</h1>
 			<h1 class="mobileTitle">tevfik ileri<br> model united nations</h1>
-			<div class="timer">
+			<div class="timer" id="timer">
 				<div class="timerDaysContainer timerItem">
 					<label class="timerDays timerCount" id="timerDays">00</label>
 					<label class="timerText">DAYS</label>
@@ -78,8 +78,8 @@
 						 <i class="fas fa-walking"></i>
 					  </div>
 					  <div class="info">
-						 <div class="main">Senate</div>
-						 <div class="sub">A: Human Rights</div>
+						 <div class="main">UNEP</div>
+						 <div class="sub">A: lorem ipsum dolor sit amet </div>
 					  </div>
 				   </div>
 				</div>
@@ -90,8 +90,8 @@
 						 <i class="fas fa-snowflake"></i>
 					  </div>
 					  <div class="info">
-						 <div class="main">Oretemauw</div>
-						 <div class="sub">Omuke trughte a otufta</div>
+						 <div class="main">DISEC</div>
+						 <div class="sub">A: lorem ipsum dolor sit amet</div>
 					  </div>
 				   </div>
 				</div>
@@ -102,8 +102,8 @@
 						 <i class="fas fa-tree"></i>
 					  </div>
 					  <div class="info">
-						 <div class="main">Iteresuselle</div>
-						 <div class="sub">Omuke trughte a otufta</div>
+						 <div class="main">SOCHUM</div>
+						 <div class="sub">A: lorem ipsum dolor sit amet</div>
 					  </div>
 				   </div>
 				</div>
@@ -114,8 +114,8 @@
 						  <i class="fas fa-tree"></i>
 					   </div>
 					   <div class="info">
-						  <div class="main">Iteresuselle</div>
-						  <div class="sub">Omuke trughte a otufta</div>
+						  <div class="main">Galactic Senate</div>
+						  <div class="sub">A: lorem ipsum dolor sit amet</div>
 					   </div>
 					</div>
 				 </div>
@@ -126,7 +126,7 @@
 						  <i class="fas fa-tree"></i>
 					   </div>
 					   <div class="info">
-						  <div class="main">Iteresuselle</div>
+						  <div class="main">NATO</div>
 						  <div class="sub">Omuke trughte a otufta</div>
 					   </div>
 					</div>
@@ -138,11 +138,35 @@
 						 <i class="fas fa-tint"></i>
 					  </div>
 					  <div class="info">
-						 <div class="main">Idiefe</div>
+						 <div class="main">Interpol</div>
 						 <div class="sub">Omuke trughte a otufta</div>
 					  </div>
 				   </div>
 				</div>
+				<div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);">
+					<div class="shadow"></div>
+					<div class="label">
+					   <div class="icon">
+						  <i class="fas fa-tint"></i>
+					   </div>
+					   <div class="info">
+						  <div class="main">HCC</div>
+						  <div class="sub">Omuke trughte a otufta</div>
+					   </div>
+					</div>
+				 </div>
+				 <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);">
+					<div class="shadow"></div>
+					<div class="label">
+					   <div class="icon">
+						  <i class="fas fa-tint"></i>
+					   </div>
+					   <div class="info">
+						  <div class="main">OTS</div>
+						  <div class="sub">Omuke trughte a otufta</div>
+					   </div>
+					</div>
+				 </div>
 			 </div>
 		</div>
 		<section class="team committees-mobile">
@@ -327,22 +351,28 @@
 	</footer>
 	<script>
 		// Timer
-		window.onload = () => {
+		function setTimer() {
 			const second = 1000
 			const minute = second * 60
 			const hour = minute * 60
 			const day = hour * 24;
 			const endTime = new Date("Sat Jun 06 2024 16:44:01 GMT+0300")
+			const distance = endTime.getTime() - Date.now()
+			const days = Math.floor(distance / day)
+			const hours = Math.floor((distance % day) / hour)
+			const minutes = Math.floor((distance % hour) / minute)
+			const seconds = Math.floor((distance % minute) / second)
+			document.getElementById("timerDays").innerText = days.toString()
+			document.getElementById("timerHours").innerText = hours.toString()
+			document.getElementById("timerMinutes").innerText = minutes.toString()
+			document.getElementById("timerSeconds").innerText = seconds.toString()
+		}
+
+		window.onload = () => {
+			setTimer()
+			document.getElementById("timer").style.opacity = 1
 			setInterval(() => {
-				const distance = endTime.getTime() - Date.now()
-				const days = Math.floor(distance / day)
-				const hours = Math.floor((distance % day) / hour)
-				const minutes = Math.floor((distance % hour) / minute)
-				const seconds = Math.floor((distance % minute) / second)
-				document.getElementById("timerDays").innerText = days.toString()
-				document.getElementById("timerHours").innerText = hours.toString()
-				document.getElementById("timerMinutes").innerText = minutes.toString()
-				document.getElementById("timerSeconds").innerText = seconds.toString()
+				setTimer()
 			}, 1000)
 		}
 		// Timer
