@@ -51,99 +51,85 @@
 		</div>
 	</section>
 	<section section class="js-scroll-step pricing">
-			<div class="wrapper">		  
-				<div class="faq">
-				  <button class="accordion">
-					What is Krushi?
-					<i class="mdi mdi-chevron-down"></i>
-				  </button>
-				  <div class="pannel">
-					<p>
-					  Krushi is a Public Charitable Trust designed to carry out farming on
-					  extensive scale Natural & Sustainable methods.
-					</p>
-				  </div>
-				</div>
-		  
-				<div class="faq">
-				  <button class="accordion">
-					How does it work?
-					<i class="mdi mdi-chevron-down"></i>
-				  </button>
-				  <div class="pannel">
-					<p>
-					  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-					  saepe molestiae distinctio asperiores cupiditate consequuntur dolor
-					  ullam, iure eligendi harum eaque hic corporis debitis porro
-					  consectetur voluptate rem officiis architecto.
-					</p>
-				  </div>
-				</div>
-		  
-				<div class="faq">
-				  <button class="accordion">
-					What are the major challanges of current agriculture?
-					<i class="mdi mdi-chevron-down"></i>
-				  </button>
-				  <div class="pannel">
-					<p>
-					  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-					  saepe molestiae distinctio asperiores cupiditate consequuntur dolor
-					  ullam, iure eligendi harum eaque hic corporis debitis porro
-					  consectetur voluptate rem officiis architecto.
-					</p>
-				  </div>
-				</div>
-		  
-				<div class="faq">
-				  <button class="accordion">
-					How does the Krushi address the above challanges?
-					<i class="mdi mdi-chevron-down"></i>
-				  </button>
-				  <div class="pannel">
-					<p>
-					  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-					  saepe molestiae distinctio asperiores cupiditate consequuntur dolor
-					  ullam, iure eligendi harum eaque hic corporis debitis porro
-					  consectetur voluptate rem officiis architecto.
-					</p>
-				  </div>
-				</div>
-		  
-				<div class="faq">
-				  <button class="accordion">
-					How can I be a part of Krushi?
-					<i class="mdi mdi-chevron-down"></i>
-				  </button>
-				  <div class="pannel">
-					<p>
-					  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-					  saepe molestiae distinctio asperiores cupiditate consequuntur dolor
-					  ullam, iure eligendi harum eaque hic corporis debitis porro
-					  consectetur voluptate rem officiis architecto.
-					</p>
-				  </div>
-				</div>
-		  
-				<div class="faq">
-				  <button class="accordion">
-					How does it work?
-					<i class="mdi mdi-chevron-down"></i>
-				  </button>
-				  <div class="pannel">
-					<p>
-					  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-					  saepe molestiae distinctio asperiores cupiditate consequuntur dolor
-					  ullam, iure eligendi harum eaque hic corporis debitis porro
-					  consectetur voluptate rem officiis architecto.
-					</p>
-				  </div>
-				</div>
-			</div>
+		<div class="wrapper" id="wrapper"></div>
 	</section>
 		
 	  
 		  <script>
+			const questions = [
+				{
+					question: "What is Krushi?",
+					answer: "Krushi is a Public Charitable Trust designed to carry out farming on extensive scale Natural & Sustainable methods."
+				},
+				{
+					question: "How does it work?",
+					answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis saepe molestiae distinctio asperiores cupiditate consequuntur dolor ullam, iure eligendi harum eaque hic corporis debitis porro consectetur voluptate rem officiis architecto."
+				},
+				{
+					question: "What are the major challanges of current agriculture?",
+					answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis saepe molestiae distinctio asperiores cupiditate consequuntur dolor ullam, iure eligendi harum eaque hic corporis debitis porro consectetur voluptate rem officiis architecto."
+				},
+				{
+					question: "How does the Krushi address the above challanges?",
+					answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis saepe molestiae distinctio asperiores cupiditate consequuntur dolor ullam, iure eligendi harum eaque hic corporis debitis porro consectetur voluptate rem officiis architecto."
+				},
+				{
+					question: "How can I be a part of Krushi?",
+					answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis saepe molestiae distinctio asperiores cupiditate consequuntur dolor ullam, iure eligendi harum eaque hic corporis debitis porro consectetur voluptate rem officiis architecto."
+				},
+				{
+					question: "How does it work?",
+					answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis saepe molestiae distinctio asperiores cupiditate consequuntur dolor ullam, iure eligendi harum eaque hic corporis debitis porro consectetur voluptate rem officiis architecto."
+				},
+			]
+
+			window.onload = () => {
+				questions.map((question, i) => {
+					// create element
+					const questionContainer = document.createElement("div")
+					const button = document.createElement("button")
+					const icon = document.createElement("i")
+					const pannel = document.createElement("div")
+					const answer = document.createElement("p")
+					// create element
+
+					// add classes
+					questionContainer.classList.add("faq")
+					button.classList.add("accordion")
+					icon.classList.add("mdi")
+					icon.classList.add("mdi-chevron-down")
+					pannel.classList.add("pannel")
+					// add classes
+
+					// write values
+					button.innerText = question.question
+					answer.innerText = question.answer
+					// write values
+
+					// create listeners
+					button.addEventListener("click", () => {
+						button.parentElement.classList.toggle("active")
+						button.classList.toggle("active")
+						if(button.classList.contains("active")) {
+							pannel.style.display = "block"
+							icon.style.transform = "rotate(180deg)"
+						} else {
+							pannel.style.display = "none"
+							icon.style.transform = "rotate(0deg)"
+						}
+					})
+					// create listeners
+
+					// append
+					pannel.appendChild(answer)
+					button.appendChild(icon)
+					questionContainer.appendChild(button)
+					questionContainer.appendChild(pannel)
+					document.getElementById("wrapper").appendChild(questionContainer)
+					// append
+				})
+			}
+
 			//Toggle Mobile Navbar
 
 			function toggleNavbar() {
@@ -161,25 +147,6 @@
 			}
 		
 			//Toggle Mobile Navbar
-
-
-			var acc = document.getElementsByClassName("accordion");
-			var i;
-	  
-			for (i = 0; i < acc.length; i++) {
-			  acc[i].addEventListener("click", function () {
-				this.classList.toggle("active");
-				this.parentElement.classList.toggle("active");
-	  
-				var pannel = this.nextElementSibling;
-	  
-				if (pannel.style.display === "block") {
-				  pannel.style.display = "none";
-				} else {
-				  pannel.style.display = "block";
-				}
-			  });
-			}
 		  </script>
 
 	<footer class="footer">
