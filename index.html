@@ -6,8 +6,8 @@
 	<link rel="stylesheet" href="css/timer.css">
 	<!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'> -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-	<link rel="stylesheet" type"text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css"
-	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"> 
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,11 +16,25 @@
 </head>
 <body>
 	<section class="header js-scroll-step" id="Main">
+		<div class="mobile-navbar" id="mobile-navbar">
+			<div class="mobile-nav-links">
+				<ul>
+					<li><a onclick="toggleNavbar()" href="#Committees">Committees</a></li>
+					<li><a onclick="toggleNavbar()" href="#Details">Details</a></li>
+					<li><a onclick="toggleNavbar()" href="faq.html" target="_blank">FAQ</a></li>
+					<li><a onclick="toggleNavbar()" href="#Pricing">Pricing</a></li>
+					<li><a onclick="toggleNavbar()" href="#" target="_blank">Apply Now</a></li>
+				</ul>
+			</div>
+		</div>
 		<nav>
 			<a href="index.html">
 				<!--<img src="resources/AW_logo.png" alt="LOGO"> -->
 				<h1 class="logo">ILERIMUN</h1>
 			</a>
+			<div class="mobile-navbar-toggle" onclick="toggleNavbar()">
+				<i class="mdi mdi-menu" id="toggle" style="color: #f8dcbf; font-size: 35px;"></i>
+			</div>
 			<div class="nav-links">
 				<!-- <i class="fa fa-times"></i> -->
 				<ul>
@@ -377,6 +391,24 @@
   	 </div>
 	</footer>
 	<script>
+		//Toggle Mobile Navbar
+
+		function toggleNavbar() {
+			if($("#toggle").hasClass("mdi-menu")) {
+				$("#toggle").removeClass("mdi-menu")
+				$("#toggle").addClass("mdi-close")
+				$("body").css("overflow", "hidden")
+				document.getElementById("mobile-navbar").style.right = 0
+			} else if ($("#toggle").hasClass("mdi-close")) {
+				$("#toggle").removeClass("mdi-close")
+				$("#toggle").addClass("mdi-menu")
+				$("body").css("overflow", "visible")
+				document.getElementById("mobile-navbar").style.right = `-${screen.width}px`
+			}
+		}
+
+		//Toggle Mobile Navbar
+
 		// Timer
 		function setTimer() {
 			const second = 1000
