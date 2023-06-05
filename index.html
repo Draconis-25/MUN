@@ -484,7 +484,6 @@
         steps: null,
         navigationContainer: null,
         links: null,
-        scrollToTopBtn: null,
 
         navigationElementClass: ".Quick-navigation",
         currentStepClass: "current",
@@ -541,13 +540,6 @@
 
         // Activate smooth scrolling
         if (options.smoothScrollEnabled) this.smoothScroll();
-
-        // Scroll to top handling
-        if (options.scrollToTopBtn) {
-          options.scrollToTopBtn.addEventListener("click", function () {
-            options.smoothScrollAnimation(0);
-          });
-        }
 
         // Throttle for performances gain
         throttledGetScrollPosition = throttle(this.getScrollPosition).bind(
@@ -651,24 +643,19 @@
   // APP init
   //////////////////////
 
-  var scrollToTopBtn = document.querySelector(".Scroll-to-top"),
-    steps = document.querySelectorAll(".js-scroll-step"),
+  var steps = document.querySelectorAll(".js-scroll-step"),
     navigationContainer = document.querySelector(".Quick-navigation"),
     links = navigationContainer.querySelectorAll("a"),
     progressIndicator = document.querySelector(".Scroll-progress-indicator");
 
   ScrollManager.init({
     steps: steps,
-    scrollToTopBtn: scrollToTopBtn,
     navigationContainer: navigationContainer,
     links: links,
 
     // Customize onScroll behavior
     onScroll: function () {
       var percentage = ScrollManager.scrollPercentage();
-      percentage >= 90
-        ? scrollToTopBtn.classList.add("visible")
-        : scrollToTopBtn.classList.remove("visible");
 
       if (percentage >= 10) {
         progressIndicator.innerHTML = percentage + "%";
