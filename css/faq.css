@@ -58,6 +58,7 @@ section {
 
 .accordion i {
   font-size: 1.6rem;
+  transition: 0.2s;
 }
 /* 
 .accordion:hover {
