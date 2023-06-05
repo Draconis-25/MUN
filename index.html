@@ -645,8 +645,7 @@
 
   var steps = document.querySelectorAll(".js-scroll-step"),
     navigationContainer = document.querySelector(".Quick-navigation"),
-    links = navigationContainer.querySelectorAll("a"),
-    progressIndicator = document.querySelector(".Scroll-progress-indicator");
+    links = navigationContainer.querySelectorAll("a");
 
   ScrollManager.init({
     steps: steps,
@@ -656,13 +655,6 @@
     // Customize onScroll behavior
     onScroll: function () {
       var percentage = ScrollManager.scrollPercentage();
-
-      if (percentage >= 10) {
-        progressIndicator.innerHTML = percentage + "%";
-        progressIndicator.classList.add("visible");
-      } else {
-        progressIndicator.classList.remove("visible");
-      }
     }
 
     // Behavior when a step changes
