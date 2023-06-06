@@ -739,6 +739,12 @@ ul{
 	width: 400px;
 }
 
+@media(width: 560px){
+  .btn{
+    width: 80%;
+  }
+}
+
 .btn:before, .btn:after {
 	content: '';
 	position: absolute;	
