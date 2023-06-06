@@ -23,6 +23,9 @@ html {
 	scroll-behavior: smooth !important;
 	-webkit-tap-highlight-color: transparent;
 }
+@font-face {
+  font-display: swap;
+}
 
 h1 {
 	font-size: 30px;
