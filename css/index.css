@@ -23,6 +23,9 @@ html {
 	scroll-behavior: smooth !important;
 	-webkit-tap-highlight-color: transparent;
 }
+@font-face {
+  font-display: swap;
+}
 
 h1 {
 	font-size: 30px;
@@ -737,6 +740,14 @@ ul{
 	user-select: none;
 	margin: auto;
 	width: 400px;
+}
+
+@media(max-width: 760px){
+  .btn{
+    width: 80%;
+    padding: 1.4rem 0px;
+padding-right: 0px;
+  }
 }
 
 .btn:before, .btn:after {
