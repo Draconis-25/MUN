@@ -1,3 +1,7 @@
+.wrapper {
+    max-width: 100% !important;
+}
+
 .responsive-cell-block {
     min-height: 75px;
 }
@@ -42,7 +46,6 @@
     max-width: 1380px;
     margin-top: 60px;
     margin-right: auto;
-    margin-bottom: 60px;
     margin-left: auto;
     padding-top: 0px;
     padding-right: 30px;
