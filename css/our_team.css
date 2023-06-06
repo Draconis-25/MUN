@@ -300,3 +300,8 @@ body {
         width: 100%;
     }
 }
+
+span {
+    color: #045174;
+    font-size: 20px;
+}
