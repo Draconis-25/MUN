@@ -4,9 +4,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-	padding-bottom: 30px;
-	opacity: 0;
-	transition: 0.7s;
+    padding-bottom: 30px;
+    opacity: 0;
+    transition: 0.7s;
 }
 
 .timerItem {
@@ -26,10 +26,10 @@
 }
 
 @media(max-width: 560px) {
-	.timerItem {
-		margin: 10px;
-	}
-	.timerText {
-		font-size: 15px;
-	}
+    .timerItem {
+        margin: 10px;
+    }
+    .timerText {
+        font-size: 15px;
+    }
 }

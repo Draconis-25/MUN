@@ -1,226 +1,261 @@
 @-webkit-keyframes slide {
-  0%, 50% {
-    opacity: 0;
-    display: block !important;
-  }
-  100% {
-    opacity: 1;
-    display: block !important;
-  }
+    0%,
+    50% {
+        opacity: 0;
+        display: block !important;
+    }
+    100% {
+        opacity: 1;
+        display: block !important;
+    }
 }
+
 @keyframes slide {
-  0%, 50% {
-    opacity: 0;
-    display: block !important;
-  }
-  100% {
-    opacity: 1;
-    display: block !important;
-  }
+    0%,
+    50% {
+        opacity: 0;
+        display: block !important;
+    }
+    100% {
+        opacity: 1;
+        display: block !important;
+    }
 }
+
 @-webkit-keyframes diespin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
+
 @keyframes diespin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
+
 .option-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  height: auto;
-  font-family: "Roboto", sans-serif;
-  transition: 0.25s;
-  padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: auto;
+    font-family: "Roboto", sans-serif;
+    transition: 0.25s;
+    padding-top: 30px;
 }
+
 .option-container.dark {
-  /* background: #232223; */
-  color: #f8ebeb;
-}
-@media (prefers-color-scheme: dark) {
-  .option-container:not(.light) {
     /* background: #232223; */
     color: #f8ebeb;
-  }
+}
+
+@media (prefers-color-scheme: dark) {
+    .option-container:not(.light) {
+        /* background: #232223; */
+        color: #f8ebeb;
+    }
 }
 
 @media screen and (max-width: 1000px) {
-	.option-container {
-		display: none;
-	}
-
+    .option-container {
+        display: none;
+    }
 }
 
 .option-container .options {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  overflow: hidden;
-  min-width: 600px;
-  max-width: 1100px;
-  width: calc(100% - 100px);
-  height: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+    min-width: 600px;
+    max-width: 1100px;
+    width: calc(100% - 100px);
+    height: 400px;
 }
+
 @media screen and (max-width: 718px) {
-  .option-container .options {
-    min-width: 520px;
-  }
-  .option-container .options .option:nth-child(5) {
-    display: none;
-  }
+    .option-container .options {
+        min-width: 520px;
+    }
+    .option-container .options .option:nth-child(5) {
+        display: none;
+    }
 }
+
 @media screen and (max-width: 638px) {
-  .option-container .options {
-    min-width: 440px;
-  }
-  .option-container .options .option:nth-child(4) {
-    display: none;
-  }
+    .option-container .options {
+        min-width: 440px;
+    }
+    .option-container .options .option:nth-child(4) {
+        display: none;
+    }
 }
+
 @media screen and (max-width: 558px) {
-  .option-container .options {
-    min-width: 360px;
-  }
-  .option-container .options .option:nth-child(3) {
-    display: none;
-  }
+    .option-container .options {
+        min-width: 360px;
+    }
+    .option-container .options .option:nth-child(3) {
+        display: none;
+    }
 }
+
 @media screen and (max-width: 478px) {
-  .option-container .options {
-    min-width: 280px;
-  }
-  .option-container .options .option:nth-child(2) {
-    display: none;
-  }
+    .option-container .options {
+        min-width: 280px;
+    }
+    .option-container .options .option:nth-child(2) {
+        display: none;
+    }
 }
+
 .option-container .options .option {
-  position: relative;
-  overflow: hidden;
-  min-width: 60px;
-  margin: 10px;
-  background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
-  background-size: auto 120%;
-  background-position: center;
-  cursor: pointer;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    position: relative;
+    overflow: hidden;
+    min-width: 60px;
+    margin: 10px;
+    background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
+    background-size: auto 120%;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
+
 .option-container .options .option:nth-child(1) {
-  --defaultBackground: #045174;
+    --defaultBackground: #045174;
 }
+
 .option-container .options .option:nth-child(2) {
-  --defaultBackground: #045174;
+    --defaultBackground: #045174;
 }
+
 .option-container .options .option:nth-child(3) {
-  --defaultBackground: #045174;
+    --defaultBackground: #045174;
 }
+
 .option-container .options .option:nth-child(4) {
-  --defaultBackground: #045174;
+    --defaultBackground: #045174;
 }
+
 .option-container .options .option:nth-child(5) {
-  --defaultBackground: #045174;
+    --defaultBackground: #045174;
 }
+
 .option-container .options .option:nth-child(6) {
-  --defaultBackground: #045174;
+    --defaultBackground: #045174;
 }
+
 .option-container .options .option:nth-child(7) {
-	--defaultBackground: #045174;
+    --defaultBackground: #045174;
 }
+
 .option-container .options .option:nth-child(8) {
-	--defaultBackground: #045174;
+    --defaultBackground: #045174;
 }
+
 .option-container .options .option.active {
-  flex-grow: 10000;
-  transform: scale(1);
-  max-width: 600px;
-  margin: 0px;
-  border-radius: 40px;
-  background-size: auto 100%;
-  /*&:active {
+    flex-grow: 10000;
+    transform: scale(1);
+    max-width: 600px;
+    margin: 0px;
+    border-radius: 40px;
+    background-size: auto 100%;
+    /*&:active {
      transform:scale(0.9);
   }*/
 }
+
 .option-container .options .option.active .shadow {
-  box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+    box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
 }
+
 .option-container .options .option.active .label {
-  bottom: 20px;
-  left: 20px;
+    bottom: 20px;
+    left: 20px;
 }
-.option-container .options .option.active .label .info > div {
-  left: 0px;
-  opacity: 1;
+
+.option-container .options .option.active .label .info>div {
+    left: 0px;
+    opacity: 1;
 }
+
 .option-container .options .option:not(.active) {
-  flex-grow: 1;
-  border-radius: 30px;
+    flex-grow: 1;
+    border-radius: 30px;
 }
+
 .option-container .options .option:not(.active) .shadow {
-  bottom: -40px;
-  box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+    bottom: -40px;
+    box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
 }
+
 .option-container .options .option:not(.active) .label {
-  bottom: 10px;
-  left: 10px;
+    bottom: 10px;
+    left: 10px;
 }
-.option-container .options .option:not(.active) .label .info > div {
-  left: 20px;
-  opacity: 0;
+
+.option-container .options .option:not(.active) .label .info>div {
+    left: 20px;
+    opacity: 0;
 }
+
 .option-container .options .option .shadow {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  height: 120px;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 120px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
+
 .option-container .options .option .label {
-  display: flex;
-  position: absolute;
-  right: 0px;
-  height: 40px;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    display: flex;
+    position: absolute;
+    right: 0px;
+    height: 40px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
+
 .option-container .options .option .label .icon {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-width: 40px;
-  max-width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  background-color: #f8ebeb;
-  color: var(--defaultBackground);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    max-width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #f8ebeb;
+    color: var(--defaultBackground);
 }
+
 .option-container .options .option .label .info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 10px;
-  color: #f8ebeb;
-  white-space: pre;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    color: #f8ebeb;
+    white-space: pre;
 }
-.option-container .options .option .label .info > div {
-  position: relative;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+
+.option-container .options .option .label .info>div {
+    position: relative;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
 }
+
 .option-container .options .option .label .info .main {
-  font-weight: bold;
-  font-size: 1.2rem;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
+
 .option-container .options .option .label .info .sub {
-  transition-delay: 0.1s;
+    transition-delay: 0.1s;
 }
