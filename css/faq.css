@@ -65,12 +65,13 @@ section {
   background-color:#f8dcbf;
 } */
 .pannel {
-  padding: 0 2rem 2.5rem 2rem;
+  /*padding: 0 2rem 2.5rem 2rem;*/
   background-color: #f8ebeb;
   overflow: hidden;
   background-color: #f8ebeb;
-  display: none;
   font-family: "Roboto" sans-serif;
+  transition: 0.2s;
+  text-align: left;
 }
 .pannel p {
   color: #000000b3;
@@ -78,6 +79,14 @@ section {
   line-height: 1.4;
   color: #001f3d;
   font-family: "Roboto" sans-serif !important;
+  display: none;
+  opacity: 0;
+  transition: 0.2s;
+  margin-left: 10px;
+}
+
+@media(max-width: 750px) {
+  
 }
 
 .faq {

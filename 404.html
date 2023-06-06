@@ -16,11 +16,25 @@
 
 <body>
     <section class="header js-scroll-step" id="Main">
+        <div class="mobile-navbar" id="mobile-navbar">
+            <div class="mobile-nav-links">
+                <ul>
+                    <li><a onclick="toggleNavbar()" href="index.html#Committees">Committees</a></li>
+                    <li><a onclick="toggleNavbar()" href="index.html#Details">Details</a></li>
+                    <li><a onclick="toggleNavbar()" href="faq.html">FAQ</a></li>
+                    <li><a onclick="toggleNavbar()" href="our_team.html">Our Team</a></li>
+                    <li><a onclick="toggleNavbar()" href="#" target="_blank">Apply Now</a></li>
+                </ul>
+            </div>
+        </div>
         <nav>
             <a href="index.html">
                 <!--<img src="resources/AW_logo.png" alt="LOGO"> -->
                 <h1 class="logo">ILERIMUN</h1>
             </a>
+            <div class="mobile-navbar-toggle" onclick="toggleNavbar()">
+                <i class="mdi mdi-menu" id="toggle" style="color: #f8dcbf; font-size: 35px;"></i>
+            </div>
             <div class="nav-links">
                 <!-- <i class="fa fa-times"></i> -->
                 <ul>
@@ -84,6 +98,35 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Auto hide navbar
+
+        let navScroll = window.scrollY
+		window.onscroll = () => {
+			if(window.screen.width < 750 && navScroll > window.scrollY) $("nav").css("top", 0), navScroll = window.scrollY
+			else if(window.screen.width < 750 && navScroll < window.scrollY) $("nav").css("top", -100), navScroll = window.scrollY
+		}
+
+        // Auto hide navbar
+
+        //Toggle Mobile Navbar
+
+        function toggleNavbar() {
+            if ($("#toggle").hasClass("mdi-menu")) {
+                $("#toggle").removeClass("mdi-menu")
+                $("#toggle").addClass("mdi-close")
+                $("body").css("overflow", "hidden")
+                document.getElementById("mobile-navbar").style.right = 0
+            } else if ($("#toggle").hasClass("mdi-close")) {
+                $("#toggle").removeClass("mdi-close")
+                $("#toggle").addClass("mdi-menu")
+                $("body").css("overflow", "visible")
+                document.getElementById("mobile-navbar").style.right = `-${screen.width}px`
+            }
+        }
+
+        //Toggle Mobile Navbar
+    </script>
 </body>
 
 </html>

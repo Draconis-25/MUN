@@ -346,6 +346,16 @@
         </div>
     </footer>
     <script>
+        // Auto hide navbar
+
+        let navScroll = window.scrollY
+		window.onscroll = () => {
+			if(window.screen.width < 750 && navScroll > window.scrollY) $("nav").css("top", 0), navScroll = window.scrollY
+			else if(window.screen.width < 750 && navScroll < window.scrollY) $("nav").css("top", -100), navScroll = window.scrollY
+		}
+
+        // Auto hide navbar
+
         //Toggle Mobile Navbar
 
         function toggleNavbar() {
