@@ -1,315 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="css/committees.css">
-	<link rel="stylesheet" href="css/timer.css">
-	<!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'> -->
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"> -->
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Homepage for Tevfik İleri Model United Nations Conference and details about, venues, dates, calendars and the committees">
-	<title>ILERIMUN</title>
-	<script src="jquery-3.6.4.min.js"></script>
-	<script>jQuery.event.special.touchstart = {
-		setup: function( _, ns, handle ) {
-			this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
-		}
-	};
-	jQuery.event.special.touchmove = {
-		setup: function( _, ns, handle ) {
-			this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
-		}
-	};
-	jQuery.event.special.wheel = {
-		setup: function( _, ns, handle ){
-			this.addEventListener("wheel", handle, { passive: true });
-		}
-	};
-	jQuery.event.special.mousewheel = {
-		setup: function( _, ns, handle ){
-			this.addEventListener("mousewheel", handle, { passive: true });
-		}
-	};</script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/committees.css">
+    <link rel="stylesheet" href="css/timer.css">
+    <!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'> -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Homepage for Tevfik İleri Model United Nations Conference and details about, venues, dates, calendars and the committees">
+    <title>ILERIMUN</title>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+        jQuery.event.special.touchstart = {
+            setup: function(_, ns, handle) {
+                this.addEventListener("touchstart", handle, {
+                    passive: !ns.includes("noPreventDefault")
+                });
+            }
+        };
+        jQuery.event.special.touchmove = {
+            setup: function(_, ns, handle) {
+                this.addEventListener("touchmove", handle, {
+                    passive: !ns.includes("noPreventDefault")
+                });
+            }
+        };
+        jQuery.event.special.wheel = {
+            setup: function(_, ns, handle) {
+                this.addEventListener("wheel", handle, {
+                    passive: true
+                });
+            }
+        };
+        jQuery.event.special.mousewheel = {
+            setup: function(_, ns, handle) {
+                this.addEventListener("mousewheel", handle, {
+                    passive: true
+                });
+            }
+        };
+    </script>
 </head>
+
 <body>
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
-	<section class="header js-scroll-step" id="Main">
-		<div class="mobile-navbar" id="mobile-navbar">
-			<div class="mobile-nav-links">
-				<ul>
-					<li><a onclick="toggleNavbar()" href="#Committees">Committees</a></li>
-					<li><a onclick="toggleNavbar()" href="#Details">Details</a></li>
-					<li><a onclick="toggleNavbar()" href="faq.html" target="_blank">FAQ</a></li>
-					<li><a onclick="toggleNavbar()" href="#" target="_blank">Apply Now</a></li>
-				</ul>
-			</div>
-		</div>
-		<nav>
-			<a href="index.html">
-				<!--<img src="resources/AW_logo.png" alt="LOGO"> -->
-				<h1 class="logo">ILERIMUN</h1>
-			</a>
-			<div class="mobile-navbar-toggle" onclick="toggleNavbar()">
-				<i class="mdi mdi-menu" id="toggle" style="color: #f8dcbf; font-size: 35px;"></i>
-			</div>
-			<div class="nav-links">
-				<!-- <i class="fa fa-times"></i> -->
-				<ul>
-					<li><a href="#Committees">Committees</a></li>
-					<li><a href="#Details">Details</a></li>
-					<li><a href="faq.html" target="_blank">FAQ</a></li>
-					<li><a href="#" target="_blank">Apply Now</a></li>
-				</ul>
-			</div>
-			<!-- <i class="fa fa-bars"></i> -->
-		</nav>
-		<div class="text-box">
-			<p>The experience you've been waiting for</p>
-			<h1 class="desktopTitle">tevfik ileri religious high school <br> model united nations</h1>
-			<h1 class="mobileTitle">tevfik ileri<br> model united nations</h1>
-			<div class="timer" id="timer">
-				<div class="timerDaysContainer timerItem">
-					<label class="timerDays timerCount" id="timerDays">00</label>
-					<label class="timerText">DAYS</label>
-				</div> |
-				<div class="timerHoursContainer timerItem">
-					<label class="timerHours timerCount" id="timerHours">00</label>
-					<label class="timerText">HOURS</label>
-				</div> |
-				<div class="timerMinutesContainer timerItem">
-					<label class="timerMinutes timerCount" id="timerMinutes">00</label>
-					<label class="timerText">MINUTES</label>
-				</div>|
-				<div class="timerSecondsContainer timerItem">
-					<label class="timerSeconds timerCount" id="timerSeconds">00</label>
-					<label class="timerText">SECONDS</label>
-				</div>
-			</div>
-			<div>
-				<div class="btn from-top">
-					<a href="#" class="wbutton">APPLY NOW</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<div class="Quick-navigation">
-  		<a href="#Main" aria-label="Homepage" class="Quick-navigation-item"><span class="mdi mdi-home-outline"/> </a>
-  		<a href="#Committees" aria-label="Committees" class="Quick-navigation-item"><span class="mdi mdi-lightbulb-outline"/></a>
-  		<a href="#Details" aria-label="Details" class="Quick-navigation-item"><span class="mdi mdi-calendar-outline"/></a>
-  		<!-- <a href="#Pricing" aria-label="Homepage" class="Quick-navigation-item"><span class="mdi mdi-credit-card-outline"/></a> -->
-	</div>
-	
-	<section class="js-scroll-step committees" id="Committees">
-		<h1>
-			Committees
-		</h1>
-		<div class="option-container"> 
-			<div class="options">
-				<div class="option active" style="--optionBackground:url(https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg);">
-				   <div class="shadow"></div>
-				   <div class="label">
-					  <div class="icon">
-						 <i class="mdi mdi-sprout-outline"></i>
-					  </div>
-					  <div class="info">
-						 <div class="main">UNEP</div>
-						 <div class="sub">A: lorem ipsum dolor sit amet </div>
-					  </div>
-				   </div>
-				</div>
-				<div class="option" style="--optionBackground:url(https://66.media.tumblr.com/8b69cdde47aa952e4176b4200052abf4/tumblr_o51p7mFFF21qho82wo1_1280.jpg);">
-				   <div class="shadow"></div>
-				   <div class="label">
-					  <div class="icon">
-						 <i class="mdi mdi-pistol"></i>
-					  </div>
-					  <div class="info">
-						 <div class="main">DISEC</div>
-						 <div class="sub">A: lorem ipsum dolor sit amet</div>
-					  </div>
-				   </div>
-				</div>
-				<div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);">
-				   <div class="shadow"></div>
-				   <div class="label">
-					  <div class="icon">
-						 <i class="mdi mdi-human-male-female-child"></i>
-					  </div>
-					  <div class="info">
-						 <div class="main">SOCHUM</div>
-						 <div class="sub">A: lorem ipsum dolor sit amet</div>
-					  </div>
-				   </div>
-				</div>
-				<div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);">
-					<div class="shadow"></div>
-					<div class="label">
-					   <div class="icon">
-						  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
+    <section class="header js-scroll-step" id="Main">
+        <div class="mobile-navbar" id="mobile-navbar">
+            <div class="mobile-nav-links">
+                <ul>
+                    <li><a onclick="toggleNavbar()" href="#Committees">Committees</a></li>
+                    <li><a onclick="toggleNavbar()" href="#Details">Details</a></li>
+                    <li><a onclick="toggleNavbar()" href="faq.html" target="_blank">FAQ</a></li>
+                    <li><a onclick="toggleNavbar()" href="our_team.html">Our Team</a></li>
+                    <li><a onclick="toggleNavbar()" href="#" target="_blank">Apply Now</a></li>
+                </ul>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html">
+                <!--<img src="resources/AW_logo.png" alt="LOGO"> -->
+                <h1 class="logo">ILERIMUN</h1>
+            </a>
+            <div class="mobile-navbar-toggle" onclick="toggleNavbar()">
+                <i class="mdi mdi-menu" id="toggle" style="color: #f8dcbf; font-size: 35px;"></i>
+            </div>
+            <div class="nav-links">
+                <!-- <i class="fa fa-times"></i> -->
+                <ul>
+                    <li><a href="#Committees">Committees</a></li>
+                    <li><a href="#Details">Details</a></li>
+                    <li><a href="faq.html" target="_blank">FAQ</a></li>
+                    <li><a href="our_team.html" target="_blank">Our Team</a></li>
+                    <li><a href="#" target="_blank">Apply Now</a></li>
+                </ul>
+            </div>
+            <!-- <i class="fa fa-bars"></i> -->
+        </nav>
+        <div class="text-box">
+            <p>The experience you've been waiting for</p>
+            <h1 class="desktopTitle">tevfik ileri religious high school <br> model united nations</h1>
+            <h1 class="mobileTitle">tevfik ileri<br> model united nations</h1>
+            <div class="timer" id="timer">
+                <div class="timerDaysContainer timerItem">
+                    <label class="timerDays timerCount" id="timerDays">00</label>
+                    <label class="timerText">DAYS</label>
+                </div> |
+                <div class="timerHoursContainer timerItem">
+                    <label class="timerHours timerCount" id="timerHours">00</label>
+                    <label class="timerText">HOURS</label>
+                </div> |
+                <div class="timerMinutesContainer timerItem">
+                    <label class="timerMinutes timerCount" id="timerMinutes">00</label>
+                    <label class="timerText">MINUTES</label>
+                </div>|
+                <div class="timerSecondsContainer timerItem">
+                    <label class="timerSeconds timerCount" id="timerSeconds">00</label>
+                    <label class="timerText">SECONDS</label>
+                </div>
+            </div>
+            <div>
+                <div class="btn from-top">
+                    <a href="#" class="wbutton">APPLY NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="Quick-navigation">
+        <a href="#Main" aria-label="Homepage" class="Quick-navigation-item"><span class="mdi mdi-home-outline" /> </a>
+        <a href="#Committees" aria-label="Committees" class="Quick-navigation-item"><span class="mdi mdi-lightbulb-outline" /></a>
+        <a href="#Details" aria-label="Details" class="Quick-navigation-item"><span class="mdi mdi-calendar-outline" /></a>
+        <!-- <a href="#Pricing" aria-label="Homepage" class="Quick-navigation-item"><span class="mdi mdi-credit-card-outline"/></a> -->
+    </div>
+
+    <section class="js-scroll-step committees" id="Committees">
+        <h1>
+            Committees
+        </h1>
+        <div class="option-container">
+            <div class="options">
+                <div class="option active" style="--optionBackground:url(https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg);">
+                    <div class="shadow"></div>
+                    <div class="label">
+                        <div class="icon">
+                            <i class="mdi mdi-sprout-outline"></i>
+                        </div>
+                        <div class="info">
+                            <div class="main">UNEP</div>
+                            <div class="sub">A: lorem ipsum dolor sit amet </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/8b69cdde47aa952e4176b4200052abf4/tumblr_o51p7mFFF21qho82wo1_1280.jpg);">
+                    <div class="shadow"></div>
+                    <div class="label">
+                        <div class="icon">
+                            <i class="mdi mdi-pistol"></i>
+                        </div>
+                        <div class="info">
+                            <div class="main">DISEC</div>
+                            <div class="sub">A: lorem ipsum dolor sit amet</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);">
+                    <div class="shadow"></div>
+                    <div class="label">
+                        <div class="icon">
+                            <i class="mdi mdi-human-male-female-child"></i>
+                        </div>
+                        <div class="info">
+                            <div class="main">SOCHUM</div>
+                            <div class="sub">A: lorem ipsum dolor sit amet</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);">
+                    <div class="shadow"></div>
+                    <div class="label">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
 							  <style>svg{fill:#045174}</style>
 							  <path d="M249.86 33.48v26.07C236.28 80.17 226 168.14 225.39 274.9c11.74-15.62 19.13-33.33 19.13-48.24v-16.88c-.03-5.32.75-10.53 2.19-15.65.65-2.14 1.39-4.08 2.62-5.82 1.23-1.75 3.43-3.79 6.68-3.79 3.24 0 5.45 2.05 6.68 3.79 1.23 1.75 1.97 3.68 2.62 5.82 1.44 5.12 2.22 10.33 2.19 15.65v16.88c0 14.91 7.39 32.62 19.13 48.24-.63-106.76-10.91-194.73-24.49-215.35V33.48h-12.28zm-26.34 147.77c-9.52 2.15-18.7 5.19-27.46 9.08 8.9 16.12 9.76 32.64 1.71 37.29-8 4.62-21.85-4.23-31.36-19.82-11.58 8.79-21.88 19.32-30.56 31.09 14.73 9.62 22.89 22.92 18.32 30.66-4.54 7.7-20.03 7.14-35.47-.96-5.78 13.25-9.75 27.51-11.65 42.42 9.68.18 18.67 2.38 26.18 6.04 17.78-.3 32.77-1.96 40.49-4.22 5.55-26.35 23.02-48.23 46.32-59.51.73-25.55 1.88-49.67 3.48-72.07zm64.96 0c1.59 22.4 2.75 46.52 3.47 72.07 23.29 11.28 40.77 33.16 46.32 59.51 7.72 2.26 22.71 3.92 40.49 4.22 7.51-3.66 16.5-5.85 26.18-6.04-1.9-14.91-5.86-29.17-11.65-42.42-15.44 8.1-30.93 8.66-35.47.96-4.57-7.74 3.6-21.05 18.32-30.66-8.68-11.77-18.98-22.3-30.56-31.09-9.51 15.59-23.36 24.44-31.36 19.82-8.05-4.65-7.19-21.16 1.71-37.29a147.49 147.49 0 0 0-27.45-9.08zm-32.48 8.6c-3.23 0-5.86 8.81-6.09 19.93h-.05v16.88c0 41.42-49.01 95.04-93.49 95.04-52 0-122.75-1.45-156.37 29.17v2.51c9.42 17.12 20.58 33.17 33.18 47.97C45.7 380.26 84.77 360.4 141.2 360c45.68 1.02 79.03 20.33 90.76 40.87.01.01-.01.04 0 .05 7.67 2.14 15.85 3.23 24.04 3.21 8.19.02 16.37-1.07 24.04-3.21.01-.01-.01-.04 0-.05 11.74-20.54 45.08-39.85 90.76-40.87 56.43.39 95.49 20.26 108.02 41.35 12.6-14.8 23.76-30.86 33.18-47.97v-2.51c-33.61-30.62-104.37-29.17-156.37-29.17-44.48 0-93.49-53.62-93.49-95.04v-16.88h-.05c-.23-11.12-2.86-19.93-6.09-19.93zm0 96.59c22.42 0 40.6 18.18 40.6 40.6s-18.18 40.65-40.6 40.65-40.6-18.23-40.6-40.65c0-22.42 18.18-40.6 40.6-40.6zm0 7.64c-18.19 0-32.96 14.77-32.96 32.96S237.81 360 256 360s32.96-14.77 32.96-32.96-14.77-32.96-32.96-32.96zm0 6.14c14.81 0 26.82 12.01 26.82 26.82s-12.01 26.82-26.82 26.82-26.82-12.01-26.82-26.82 12.01-26.82 26.82-26.82zm-114.8 66.67c-10.19.07-21.6.36-30.5 1.66.43 4.42 1.51 18.63 7.11 29.76 9.11-2.56 18.36-3.9 27.62-3.9 41.28.94 71.48 34.35 78.26 74.47l.11 4.7c10.4 1.91 21.19 2.94 32.21 2.94 11.03 0 21.81-1.02 32.21-2.94l.11-4.7c6.78-40.12 36.98-73.53 78.26-74.47 9.26 0 18.51 1.34 27.62 3.9 5.6-11.13 6.68-25.34 7.11-29.76-8.9-1.3-20.32-1.58-30.5-1.66-18.76.42-35.19 4.17-48.61 9.67-12.54 16.03-29.16 30.03-49.58 33.07-.09.02-.17.04-.27.05-.05.01-.11.04-.16.05-5.24 1.07-10.63 1.6-16.19 1.6-5.55 0-10.95-.53-16.19-1.6-.05-.01-.11-.04-.16-.05-.1-.02-.17-.04-.27-.05-20.42-3.03-37.03-17.04-49.58-33.07-13.42-5.49-29.86-9.25-48.61-9.67z"/></svg>
-					   </div>
-					   <div class="info">
-						  <div class="main">Galactic Senate</div>
-						  <div class="sub">A: lorem ipsum dolor sit amet</div>
-					   </div>
-					</div>
-				 </div>
-				 <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);">
-					<div class="shadow"></div>
-					<div class="label">
-					   <div class="icon">
-						  <i class="mdi mdi-globe-model"></i>
-					   </div>
-					   <div class="info">
-						  <div class="main">NATO</div>
-						  <div class="sub">Omuke trughte a otufta</div>
-					   </div>
-					</div>
-				 </div>
-				<div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);">
-				   <div class="shadow"></div>
-				   <div class="label">
-					  <div class="icon">
-						 <i class="mdi mdi-police-badge-outline"></i>
-					  </div>
-					  <div class="info">
-						 <div class="main">Interpol</div>
-						 <div class="sub">Omuke trughte a otufta</div>
-					  </div>
-				   </div>
-				</div>
-				<div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);">
-					<div class="shadow"></div>
-					<div class="label">
-					   <div class="icon">
-						  <i class="mdi mdi-sword"></i>
-					   </div>
-					   <div class="info">
-						  <div class="main">HCC</div>
-						  <div class="sub">Omuke trughte a otufta</div>
-					   </div>
-					</div>
-				 </div>
-				 <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);">
-					<div class="shadow"></div>
-					<div class="label">
-					   <div class="icon">
-						  <i class="mdi mdi-star-crescent"></i>
-					   </div>
-					   <div class="info">
-						  <div class="main">OTS</div>
-						  <div class="sub">Omuke trughte a otufta</div>
-					   </div>
-					</div>
-				 </div>
-			 </div>
-		</div>
-		<section class="team committees-mobile">
-			<div class="container">
-			  <div class="row">
-				<div class="team-item">
-					<img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
-					  <h3>UNEP</h3>
-					  <p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
-					</div>
-				<div class="team-item">
-					<img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
-					<h3>DISEC</h3>
-					<p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
-				</div>
-				<div class="team-item">
-					<img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
-					<h3>SOCHUM</h3>
-					<p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
-				</div>
-				<div class="team-item">
-					<img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
-					  <h3>Galactic Senate</h3>
-					  <p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
-					</div>
-				<div class="team-item">
-					<img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
-					<h3>NATO</h3>
-					<p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
-				</div>
-				<div class="team-item">
-					<img  loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
-					<h3>Interpol</h3>
-					<p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
-				</div>
-				<div class="team-item">
-					<img  loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
-					<h3>HJCC</h3>
-					<p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
-				</div>
-				<div class="team-item">
-					<img  loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
-					<h3>OTS</h3>
-					<p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
-				</div>
-			  </div>
-			</div>
-		  </section>
-	</section>
+                        </div>
+                        <div class="info">
+                            <div class="main">Galactic Senate</div>
+                            <div class="sub">A: lorem ipsum dolor sit amet</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);">
+                    <div class="shadow"></div>
+                    <div class="label">
+                        <div class="icon">
+                            <i class="mdi mdi-globe-model"></i>
+                        </div>
+                        <div class="info">
+                            <div class="main">NATO</div>
+                            <div class="sub">Omuke trughte a otufta</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);">
+                    <div class="shadow"></div>
+                    <div class="label">
+                        <div class="icon">
+                            <i class="mdi mdi-police-badge-outline"></i>
+                        </div>
+                        <div class="info">
+                            <div class="main">Interpol</div>
+                            <div class="sub">Omuke trughte a otufta</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);">
+                    <div class="shadow"></div>
+                    <div class="label">
+                        <div class="icon">
+                            <i class="mdi mdi-sword"></i>
+                        </div>
+                        <div class="info">
+                            <div class="main">HCC</div>
+                            <div class="sub">Omuke trughte a otufta</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="option" style="--optionBackground:url(https://66.media.tumblr.com/5516a22e0cdacaa85311ec3f8fd1e9ef/tumblr_o45jwvdsL11qho82wo1_1280.jpg);">
+                    <div class="shadow"></div>
+                    <div class="label">
+                        <div class="icon">
+                            <i class="mdi mdi-star-crescent"></i>
+                        </div>
+                        <div class="info">
+                            <div class="main">OTS</div>
+                            <div class="sub">Omuke trughte a otufta</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="team committees-mobile">
+            <div class="container">
+                <div class="row">
+                    <div class="team-item">
+                        <img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto" />
+                        <h3>UNEP</h3>
+                        <p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
+                    </div>
+                    <div class="team-item">
+                        <img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto" />
+                        <h3>DISEC</h3>
+                        <p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
+                    </div>
+                    <div class="team-item">
+                        <img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto" />
+                        <h3>SOCHUM</h3>
+                        <p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
+                    </div>
+                    <div class="team-item">
+                        <img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto" />
+                        <h3>Galactic Senate</h3>
+                        <p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
+                    </div>
+                    <div class="team-item">
+                        <img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto" />
+                        <h3>NATO</h3>
+                        <p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
+                    </div>
+                    <div class="team-item">
+                        <img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto" />
+                        <h3>Interpol</h3>
+                        <p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
+                    </div>
+                    <div class="team-item">
+                        <img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto" />
+                        <h3>HJCC</h3>
+                        <p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
+                    </div>
+                    <div class="team-item">
+                        <img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto" />
+                        <h3>OTS</h3>
+                        <p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
 
-	<section class="js-scroll-step pricing" id="Details">
-		<h1>Details</h1>
-		<section class="team">
-			<div class="container">
-			  <div class="row">
-				<div class="team-item">
-				  <div class="img-box">
-					
-					<div class="social-links">
-					  <a href="#">TBA</a>
-					</div>
-				  </div>
-				  <h3>to be announced</h3>
-				  <p>calendar</p>
-				</div>
-				<div class="team-item">
+    <section class="js-scroll-step pricing" id="Details">
+        <h1>Details</h1>
+        <section class="team">
+            <div class="container">
+                <div class="row">
+                    <div class="team-item">
+                        <div class="img-box">
 
-				  <iframe class="maps-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.9194019489505!2d32.82197577504161!3d39.94319247151963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34ec459d437b9%3A0x27db3cf425b6f1ed!2sTevfik%20%C4%B0leri%20Anadolu%20Imam%20Hatip%20High!5e0!3m2!1sen!2str!4v1683973484034!5m2!1sen!2str&iwloc=near" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="VenueMap"></iframe>
-				  <a href="https://goo.gl/maps/hcX9tA5aZDueEowH8" style="text-decoration-color: #161616">
-					<h3>tevfik ileri anatolian religious high school</h3>
-				  </a>
-				  <p>venue</p>
-				</div>
-			  </div>
-			</div>
-		  </section>
-		<div>
-			<div class="btn from-top">
-				<a href="#" class="wbutton">APPLY NOW</a>
-			</div>
-		</div>
-	</section>
+                            <div class="social-links">
+                                <a href="#">TBA</a>
+                            </div>
+                        </div>
+                        <h3>to be announced</h3>
+                        <p>calendar</p>
+                    </div>
+                    <div class="team-item">
 
-	<footer class="footer">
-		<div class="container">
-  	 	<div class="row">
-  	 		<div class="footer-col">
-  	 			<h4>Sitemap</h4>
-  	 			<ul>
-  	 				<li><a href="#Committees">Committees</a></li>
-  	 				<li><a href="#Details">Details</a></li>
-  	 				<li><a href="#">FAQ</a></li>
-  	 			</ul>
-  	 		</div>
-			<div class="footer-col">
-				<h4>
-					ILERIMUN
-				</h4>
-				<ul>
-					<li><a href="#" target="_blank">Apply Now</a></li>
-					<!-- <li><a href="" target="_blank">Godot Turkish Community</a></li> -->
-				</ul>
-			</div>
-  	 		<!-- <div class="footer-col">
+                        <iframe class="maps-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.9194019489505!2d32.82197577504161!3d39.94319247151963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34ec459d437b9%3A0x27db3cf425b6f1ed!2sTevfik%20%C4%B0leri%20Anadolu%20Imam%20Hatip%20High!5e0!3m2!1sen!2str!4v1683973484034!5m2!1sen!2str&iwloc=near"
+                            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="VenueMap"></iframe>
+                        <a href="https://goo.gl/maps/hcX9tA5aZDueEowH8" style="text-decoration-color: #161616">
+                            <h3>tevfik ileri anatolian religious high school</h3>
+                        </a>
+                        <p>venue</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div>
+            <div class="btn from-top">
+                <a href="#" class="wbutton">APPLY NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Sitemap</h4>
+                    <ul>
+                        <li><a href="#Committees">Committees</a></li>
+                        <li><a href="#Details">Details</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>
+                        ILERIMUN
+                    </h4>
+                    <ul>
+                        <li><a href="#" target="_blank">Apply Now</a></li>
+                        <!-- <li><a href="" target="_blank">Godot Turkish Community</a></li> -->
+                    </ul>
+                </div>
+                <!-- <div class="footer-col">
   	 			<h4>get help</h4>
   	 			<ul>
   	 				<li><a href="#">FAQ</a></li>
@@ -319,309 +334,309 @@
   	 				<li><a href="#">payment options</a></li>
   	 			</ul>
   	 		</div> -->
-  	 		<div class="footer-col">
-  	 			<h4>Community</h4>
-  	 			<div class="social-links" style="font-size: 20px">
-  	 				<a aria-label="MailLink" href="/mail" target="_blank"><i class="mdi mdi-email-outline"></i></a>
-  	 			  	<a aria-label="InstaLink" href="https://www.instagram.com/tevfikileriaihl_en/" target="_blank"><i class="mdi mdi-instagram"></i></a>
-  	 				<a aria-label="MapLink" href="https://goo.gl/maps/hcX9tA5aZDueEowH8" target="_blank"><i class="mdi mdi-map-marker-outline"></i></a>
-  	 			</div>
-  	 		</div>
-  	 	</div>
-  	 </div>
-	</footer>
-	<script>
-		//Toggle Mobile Navbar
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <div class="social-links" style="font-size: 20px">
+                        <a aria-label="MailLink" href="/mail" target="_blank"><i class="mdi mdi-email-outline"></i></a>
+                        <a aria-label="InstaLink" href="https://www.instagram.com/tevfikileriaihl_en/" target="_blank"><i class="mdi mdi-instagram"></i></a>
+                        <a aria-label="MapLink" href="https://goo.gl/maps/hcX9tA5aZDueEowH8" target="_blank"><i class="mdi mdi-map-marker-outline"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        //Toggle Mobile Navbar
 
-		function toggleNavbar() {
-			if($("#toggle").hasClass("mdi-menu")) {
-				$("#toggle").removeClass("mdi-menu")
-				$("#toggle").addClass("mdi-close")
-				$("body").css("overflow", "hidden")
-				document.getElementById("mobile-navbar").style.right = 0
-			} else if ($("#toggle").hasClass("mdi-close")) {
-				$("#toggle").removeClass("mdi-close")
-				$("#toggle").addClass("mdi-menu")
-				$("body").css("overflow", "visible")
-				document.getElementById("mobile-navbar").style.right = `-${screen.width}px`
-			}
-		}
-
-		//Toggle Mobile Navbar
-
-		// Timer
-		function setTimer() {
-			const second = 1000
-			const minute = second * 60
-			const hour = minute * 60
-			const day = hour * 24;
-			const endTime = new Date("Sat Jun 06 2024 16:44:01 GMT+0300")
-			const distance = endTime.getTime() - Date.now()
-			const days = Math.floor(distance / day)
-			const hours = Math.floor((distance % day) / hour)
-			const minutes = Math.floor((distance % hour) / minute)
-			const seconds = Math.floor((distance % minute) / second)
-			document.getElementById("timerDays").innerText = days.toString()
-			document.getElementById("timerHours").innerText = hours.toString()
-			document.getElementById("timerMinutes").innerText = minutes.toString()
-			document.getElementById("timerSeconds").innerText = seconds.toString()
-		}
-
-		window.onload = () => {
-			setTimer()
-			document.getElementById("timer").style.opacity = 1
-			setInterval(() => {
-				setTimer()
-			}, 1000)
-		}
-		// Timer
-
-	(function () {
-  //////////////////////
-  // Utils
-  //////////////////////
-  function throttle(fn, delay, scope) {
-    // Default delay
-    delay = delay || 250;
-    var last, defer;
-    return function () {
-      var context = scope || this,
-        now = +new Date(),
-        args = arguments;
-      if (last && now < last + delay) {
-        clearTimeout(defer);
-        defer = setTimeout(function () {
-          last = now;
-          fn.apply(context, args);
-        }, delay);
-      } else {
-        last = now;
-        fn.apply(context, args);
-      }
-    };
-  }
-
-  function extend(destination, source) {
-    for (var k in source) {
-      if (source.hasOwnProperty(k)) {
-        destination[k] = source[k];
-      }
-    }
-    return destination;
-  }
-
-  //////////////////////
-  // END Utils
-  //////////////////////
-
-  //////////////////////
-  // Scroll Module
-  //////////////////////
-
-  var ScrollManager = (function () {
-    var defaults = {
-        steps: null,
-        navigationContainer: null,
-        links: null,
-
-        navigationElementClass: ".Quick-navigation",
-        currentStepClass: "current",
-        smoothScrollEnabled: false,
-        stepsCheckEnabled: true,
-
-        // Callbacks
-        onScroll: null,
-
-        onStepChange: function (step) {
-          var self = this;
-          var relativeLink = [].filter.call(options.links, function (link) {
-            link.classList.remove(self.currentStepClass);
-            return link.hash === "#" + step.id;
-          });
-          relativeLink[0].classList.add(self.currentStepClass);
-        },
-
-        // Provide a default scroll animation
-        smoothScrollAnimation: function (target) {
-          $("html, body").animate(
-            {
-              scrollTop: target
-            },
-            "slow"
-          );
-        }
-      },
-      options = {};
-
-    // Privates
-    var _animation = null,
-      currentStep = null,
-      throttledGetScrollPosition = null;
-
-    return {
-      scrollPosition: 0,
-
-      init: function (opts) {
-        options = extend(defaults, opts);
-
-        if (options.steps === null) {
-          console.warn(
-            "Smooth scrolling require some sections or steps to scroll to :)"
-          );
-          return false;
+        function toggleNavbar() {
+            if ($("#toggle").hasClass("mdi-menu")) {
+                $("#toggle").removeClass("mdi-menu")
+                $("#toggle").addClass("mdi-close")
+                $("body").css("overflow", "hidden")
+                document.getElementById("mobile-navbar").style.right = 0
+            } else if ($("#toggle").hasClass("mdi-close")) {
+                $("#toggle").removeClass("mdi-close")
+                $("#toggle").addClass("mdi-menu")
+                $("body").css("overflow", "visible")
+                document.getElementById("mobile-navbar").style.right = `-${screen.width}px`
+            }
         }
 
-        // Allow to customize the animation engine ( jQuery / GSAP / velocity / ... )
-        _animation = function (target) {
-          target = typeof target === "number" ? target : $(target).offset().top;
-          return options.smoothScrollAnimation(target);
-        };
+        //Toggle Mobile Navbar
 
-        // Activate smooth scrolling
-        if (options.smoothScrollEnabled) this.smoothScroll();
-
-        // Throttle for performances gain
-        throttledGetScrollPosition = throttle(this.getScrollPosition).bind(
-          this
-        );
-        window.addEventListener("scroll", throttledGetScrollPosition);
-        window.addEventListener("resize", throttledGetScrollPosition);
-
-        this.getScrollPosition();
-      },
-
-      getScrollPosition: function () {
-        this.scrollPosition = window.pageYOffset || window.scrollY;
-        if (options.stepsCheckEnabled) this.checkActiveStep();
-        if (typeof options.onScroll === "function")
-          options.onScroll(this.scrollPosition);
-      },
-
-      scrollPercentage: function () {
-        var body = document.body,
-          html = document.documentElement,
-          documentHeight = Math.max(
-            body.scrollHeight,
-            body.offsetHeight,
-            html.clientHeight,
-            html.scrollHeight,
-            html.offsetHeight
-          );
-
-        var percentage = Math.round(
-          (this.scrollPosition / (documentHeight - window.innerHeight)) * 100
-        );
-        if (percentage < 0) percentage = 0;
-        if (percentage > 100) percentage = 100;
-        return percentage;
-      },
-
-      doSmoothScroll: function (e) {
-        if (e.target.nodeName === "A") {
-          e.preventDefault();
-          if (
-            location.pathname.replace(/^\//, "") ===
-              e.target.pathname.replace(/^\//, "") &&
-            location.hostname === e.target.hostname
-          ) {
-            var targetStep = document.querySelector(e.target.hash);
-            targetStep
-              ? _animation(targetStep)
-              : console.warn(
-                  "Hi! You should give an animation callback function to the Scroller module! :)"
-                );
-          }
+        // Timer
+        function setTimer() {
+            const second = 1000
+            const minute = second * 60
+            const hour = minute * 60
+            const day = hour * 24;
+            const endTime = new Date("Sat Jun 06 2024 16:44:01 GMT+0300")
+            const distance = endTime.getTime() - Date.now()
+            const days = Math.floor(distance / day)
+            const hours = Math.floor((distance % day) / hour)
+            const minutes = Math.floor((distance % hour) / minute)
+            const seconds = Math.floor((distance % minute) / second)
+            document.getElementById("timerDays").innerText = days.toString()
+            document.getElementById("timerHours").innerText = hours.toString()
+            document.getElementById("timerMinutes").innerText = minutes.toString()
+            document.getElementById("timerSeconds").innerText = seconds.toString()
         }
-      },
 
-      smoothScroll: function () {
-        if (options.navigationContainer !== null)
-          options.navigationContainer.addEventListener(
-            "click",
-            this.doSmoothScroll
-          );
-      },
+        window.onload = () => {
+                setTimer()
+                document.getElementById("timer").style.opacity = 1
+                setInterval(() => {
+                    setTimer()
+                }, 1000)
+            }
+            // Timer
 
-      checkActiveStep: function () {
-        var scrollPosition = this.scrollPosition;
+        (function() {
+            //////////////////////
+            // Utils
+            //////////////////////
+            function throttle(fn, delay, scope) {
+                // Default delay
+                delay = delay || 250;
+                var last, defer;
+                return function() {
+                    var context = scope || this,
+                        now = +new Date(),
+                        args = arguments;
+                    if (last && now < last + delay) {
+                        clearTimeout(defer);
+                        defer = setTimeout(function() {
+                            last = now;
+                            fn.apply(context, args);
+                        }, delay);
+                    } else {
+                        last = now;
+                        fn.apply(context, args);
+                    }
+                };
+            }
 
-        [].forEach.call(options.steps, function (step) {
-          var bBox = step.getBoundingClientRect(),
-            position = step.offsetTop,
-            height = position + bBox.height;
+            function extend(destination, source) {
+                for (var k in source) {
+                    if (source.hasOwnProperty(k)) {
+                        destination[k] = source[k];
+                    }
+                }
+                return destination;
+            }
 
-          if (
-            scrollPosition >= position &&
-            scrollPosition < height &&
-            currentStep !== step
-          ) {
-            currentStep = step;
-            step.classList.add(self.currentStepClass);
-            if (typeof options.onStepChange === "function")
-              options.onStepChange(step);
-          }
-          step.classList.remove(options.currentStepClass);
+            //////////////////////
+            // END Utils
+            //////////////////////
+
+            //////////////////////
+            // Scroll Module
+            //////////////////////
+
+            var ScrollManager = (function() {
+                var defaults = {
+                        steps: null,
+                        navigationContainer: null,
+                        links: null,
+
+                        navigationElementClass: ".Quick-navigation",
+                        currentStepClass: "current",
+                        smoothScrollEnabled: false,
+                        stepsCheckEnabled: true,
+
+                        // Callbacks
+                        onScroll: null,
+
+                        onStepChange: function(step) {
+                            var self = this;
+                            var relativeLink = [].filter.call(options.links, function(link) {
+                                link.classList.remove(self.currentStepClass);
+                                return link.hash === "#" + step.id;
+                            });
+                            relativeLink[0].classList.add(self.currentStepClass);
+                        },
+
+                        // Provide a default scroll animation
+                        smoothScrollAnimation: function(target) {
+                            $("html, body").animate({
+                                    scrollTop: target
+                                },
+                                "slow"
+                            );
+                        }
+                    },
+                    options = {};
+
+                // Privates
+                var _animation = null,
+                    currentStep = null,
+                    throttledGetScrollPosition = null;
+
+                return {
+                    scrollPosition: 0,
+
+                    init: function(opts) {
+                        options = extend(defaults, opts);
+
+                        if (options.steps === null) {
+                            console.warn(
+                                "Smooth scrolling require some sections or steps to scroll to :)"
+                            );
+                            return false;
+                        }
+
+                        // Allow to customize the animation engine ( jQuery / GSAP / velocity / ... )
+                        _animation = function(target) {
+                            target = typeof target === "number" ? target : $(target).offset().top;
+                            return options.smoothScrollAnimation(target);
+                        };
+
+                        // Activate smooth scrolling
+                        if (options.smoothScrollEnabled) this.smoothScroll();
+
+                        // Throttle for performances gain
+                        throttledGetScrollPosition = throttle(this.getScrollPosition).bind(
+                            this
+                        );
+                        window.addEventListener("scroll", throttledGetScrollPosition);
+                        window.addEventListener("resize", throttledGetScrollPosition);
+
+                        this.getScrollPosition();
+                    },
+
+                    getScrollPosition: function() {
+                        this.scrollPosition = window.pageYOffset || window.scrollY;
+                        if (options.stepsCheckEnabled) this.checkActiveStep();
+                        if (typeof options.onScroll === "function")
+                            options.onScroll(this.scrollPosition);
+                    },
+
+                    scrollPercentage: function() {
+                        var body = document.body,
+                            html = document.documentElement,
+                            documentHeight = Math.max(
+                                body.scrollHeight,
+                                body.offsetHeight,
+                                html.clientHeight,
+                                html.scrollHeight,
+                                html.offsetHeight
+                            );
+
+                        var percentage = Math.round(
+                            (this.scrollPosition / (documentHeight - window.innerHeight)) * 100
+                        );
+                        if (percentage < 0) percentage = 0;
+                        if (percentage > 100) percentage = 100;
+                        return percentage;
+                    },
+
+                    doSmoothScroll: function(e) {
+                        if (e.target.nodeName === "A") {
+                            e.preventDefault();
+                            if (
+                                location.pathname.replace(/^\//, "") ===
+                                e.target.pathname.replace(/^\//, "") &&
+                                location.hostname === e.target.hostname
+                            ) {
+                                var targetStep = document.querySelector(e.target.hash);
+                                targetStep
+                                    ?
+                                    _animation(targetStep) :
+                                    console.warn(
+                                        "Hi! You should give an animation callback function to the Scroller module! :)"
+                                    );
+                            }
+                        }
+                    },
+
+                    smoothScroll: function() {
+                        if (options.navigationContainer !== null)
+                            options.navigationContainer.addEventListener(
+                                "click",
+                                this.doSmoothScroll
+                            );
+                    },
+
+                    checkActiveStep: function() {
+                        var scrollPosition = this.scrollPosition;
+
+                        [].forEach.call(options.steps, function(step) {
+                            var bBox = step.getBoundingClientRect(),
+                                position = step.offsetTop,
+                                height = position + bBox.height;
+
+                            if (
+                                scrollPosition >= position &&
+                                scrollPosition < height &&
+                                currentStep !== step
+                            ) {
+                                currentStep = step;
+                                step.classList.add(self.currentStepClass);
+                                if (typeof options.onStepChange === "function")
+                                    options.onStepChange(step);
+                            }
+                            step.classList.remove(options.currentStepClass);
+                        });
+                    },
+
+                    destroy: function() {
+                        window.removeEventListener("scroll", throttledGetScrollPosition);
+                        window.removeEventListener("resize", throttledGetScrollPosition);
+                        options.navigationContainer.removeEventListener(
+                            "click",
+                            this.doSmoothScroll
+                        );
+                    }
+                };
+            })();
+            //////////////////////
+            // END scroll Module
+            //////////////////////
+
+            //////////////////////
+            // APP init
+            //////////////////////
+
+            var steps = document.querySelectorAll(".js-scroll-step"),
+                navigationContainer = document.querySelector(".Quick-navigation"),
+                links = navigationContainer.querySelectorAll("a");
+
+            ScrollManager.init({
+                steps: steps,
+                navigationContainer: navigationContainer,
+                links: links,
+
+                // Customize onScroll behavior
+                onScroll: function() {
+                    var percentage = ScrollManager.scrollPercentage();
+                }
+
+                // Behavior when a step changes
+                // default : highlight links
+
+                // onStepChange: function (step) {},
+
+                // Customize the animation with jQuery, GSAP or velocity
+                // default : jQuery animate()
+                // Eg with GSAP scrollTo plugin
+
+                //smoothScrollAnimation: function (target) {
+                //		TweenLite.to(window, 2, {scrollTo:{y:target}, ease:Power2.easeOut});
+                //}
+            });
+
+            //////////////////////
+            // END APP init
+            //////////////////////
+        })();
+    </script>
+    <script>
+        $(".option").click(function() {
+            $(".option").removeClass("active");
+            $(this).addClass("active");
+
         });
-      },
-
-      destroy: function () {
-        window.removeEventListener("scroll", throttledGetScrollPosition);
-        window.removeEventListener("resize", throttledGetScrollPosition);
-        options.navigationContainer.removeEventListener(
-          "click",
-          this.doSmoothScroll
-        );
-      }
-    };
-  })();
-  //////////////////////
-  // END scroll Module
-  //////////////////////
-
-  //////////////////////
-  // APP init
-  //////////////////////
-
-  var steps = document.querySelectorAll(".js-scroll-step"),
-    navigationContainer = document.querySelector(".Quick-navigation"),
-    links = navigationContainer.querySelectorAll("a");
-
-  ScrollManager.init({
-    steps: steps,
-    navigationContainer: navigationContainer,
-    links: links,
-
-    // Customize onScroll behavior
-    onScroll: function () {
-      var percentage = ScrollManager.scrollPercentage();
-    }
-
-    // Behavior when a step changes
-    // default : highlight links
-
-    // onStepChange: function (step) {},
-
-    // Customize the animation with jQuery, GSAP or velocity
-    // default : jQuery animate()
-    // Eg with GSAP scrollTo plugin
-
-    //smoothScrollAnimation: function (target) {
-    //		TweenLite.to(window, 2, {scrollTo:{y:target}, ease:Power2.easeOut});
-    //}
-  });
-
-  //////////////////////
-  // END APP init
-  //////////////////////
-})();
-
-	</script>
-	<script>
-		$(".option").click(function(){
-   $(".option").removeClass("active");
-   $(this).addClass("active");
-   
-});
-	</script>
+    </script>
 </body>
+
 </html>
