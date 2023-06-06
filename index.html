@@ -6,16 +6,36 @@
 	<link rel="stylesheet" href="css/timer.css">
 	<!-- <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'> -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"> -->
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Homepage for Tevfik İleri Model United Nations Conference and details about, venues, dates, calendars and the committees">
 	<title>ILERIMUN</title>
 	<script src="jquery-3.6.4.min.js"></script>
+	<script>jQuery.event.special.touchstart = {
+		setup: function( _, ns, handle ) {
+			this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") });
+		}
+	};
+	jQuery.event.special.touchmove = {
+		setup: function( _, ns, handle ) {
+			this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") });
+		}
+	};
+	jQuery.event.special.wheel = {
+		setup: function( _, ns, handle ){
+			this.addEventListener("wheel", handle, { passive: true });
+		}
+	};
+	jQuery.event.special.mousewheel = {
+		setup: function( _, ns, handle ){
+			this.addEventListener("mousewheel", handle, { passive: true });
+		}
+	};</script>
 </head>
 <body>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
 	<section class="header js-scroll-step" id="Main">
 		<div class="mobile-navbar" id="mobile-navbar">
 			<div class="mobile-nav-links">
@@ -70,14 +90,18 @@
 					<label class="timerText">SECONDS</label>
 				</div>
 			</div>
-			<a href="#" class="wbutton">APPLY NOW</a>
+			<div>
+				<div class="btn from-top">
+					<a href="#" class="wbutton">APPLY NOW</a>
+				</div>
+			</div>
 		</div>
 	</section>
 	<div class="Quick-navigation">
-  		<a href="#Main" class="Quick-navigation-item"><span class="mdi mdi-home-outline"/> </a>
-  		<a href="#Committees" class="Quick-navigation-item"><span class="mdi mdi-lightbulb-outline"/></a>
-  		<a href="#Details" class="Quick-navigation-item"><span class="mdi mdi-calendar-outline"/></a>
-  		<a href="#Pricing" class="Quick-navigation-item"><span class="mdi mdi-credit-card-outline"/></a>
+  		<a href="#Main" aria-label="Homepage" class="Quick-navigation-item"><span class="mdi mdi-home-outline"/> </a>
+  		<a href="#Committees" aria-label="Committees" class="Quick-navigation-item"><span class="mdi mdi-lightbulb-outline"/></a>
+  		<a href="#Details" aria-label="Details" class="Quick-navigation-item"><span class="mdi mdi-calendar-outline"/></a>
+  		<!-- <a href="#Pricing" aria-label="Homepage" class="Quick-navigation-item"><span class="mdi mdi-credit-card-outline"/></a> -->
 	</div>
 	
 	<section class="js-scroll-step committees" id="Committees">
@@ -190,42 +214,42 @@
 			<div class="container">
 			  <div class="row">
 				<div class="team-item">
-					<img src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
+					<img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
 					  <h3>UNEP</h3>
 					  <p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
 					</div>
 				<div class="team-item">
-					<img src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
+					<img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
 					<h3>DISEC</h3>
 					<p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
 				</div>
 				<div class="team-item">
-					<img src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
+					<img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
 					<h3>SOCHUM</h3>
 					<p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
 				</div>
 				<div class="team-item">
-					<img src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
+					<img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
 					  <h3>Galactic Senate</h3>
 					  <p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
 					</div>
 				<div class="team-item">
-					<img src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
+					<img loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
 					<h3>NATO</h3>
 					<p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
 				</div>
 				<div class="team-item">
-					<img src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
+					<img  loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
 					<h3>Interpol</h3>
 					<p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
 				</div>
 				<div class="team-item">
-					<img src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
+					<img  loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
 					<h3>HJCC</h3>
 					<p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
 				</div>
 				<div class="team-item">
-					<img src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
+					<img  loading="lazy" src="https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg" alt="CommitteePhoto"/>
 					<h3>OTS</h3>
 					<p>A: lorem ipsum dolor sit amet conspecteur adispiscing elit.</p>
 				</div>
@@ -234,10 +258,8 @@
 		  </section>
 	</section>
 
-	<section class="js-scroll-step details" id="Details">
-		<h1>
-			Details
-		</h1>
+	<section class="js-scroll-step pricing" id="Details">
+		<h1>Details</h1>
 		<section class="team">
 			<div class="container">
 			  <div class="row">
@@ -262,91 +284,11 @@
 			  </div>
 			</div>
 		  </section>
-		<p>
-			
-		</p>
-	</section>
-
-	<section class="js-scroll-step pricing" id="Pricing">
-		<h1>Pricing</h1>
-		<div class="container">
-			<div class="pricing-main">
-			  <div class="row">
-				<!-- basic table start -->
-				<div class="pricing-table style-1">
-				  <div class="pricing-table-header">
-					<h3>Delegate</h3>
-				  </div>
-				  <div class="pricing-table-price">
-					<div class="monthly-price">
-					  <div class="currency">$</div>
-					  <div class="amount">49</div>
-					</div>
-				  </div>
-				  <div class="pricing-table-body">
-					<ul class="monthly-features">
-					   <li> Lorem ipsum dolor sit amet</li>
-					   <li> Lorem ipsum dolor sit amet</li>
-					   <li> Lorem ipsum dolor sit amet</li>
-					   <li> Lorem ipsum dolor sit amet</li>
-					</ul>
-				  </div>
-				  <div class="pricing-table-footer">
-				  </div>
-				</div>
-				<!-- basic table end -->
-	   
-				<!-- standard table start -->
-				<div class="pricing-table style-2">
-				  <div class="pricing-table-header">
-					<h3>Chairboard</h3>
-				  </div>
-				  <div class="pricing-table-price">
-					<div class="monthly-price">
-					  <div class="currency">$</div>
-					  <div class="amount">99</div>
-					</div>
-				  </div>
-				  <div class="pricing-table-body">
-					<ul class="monthly-features">
-					   <li> Lorem ipsum dolor sit amet</li>
-					   <li> Lorem ipsum dolor sit amet</li>
-					   <li> Lorem ipsum dolor sit amet</li>
-					   <li> Lorem ipsum dolor sit amet</li>
-					</ul>
-				  </div>
-				  <div class="pricing-table-footer">
-				  </div>
-				</div>
-				<!-- standard table end -->
-	   
-				<!-- premium table start -->
-				<div class="pricing-table style-3">
-				  <div class="pricing-table-header">
-					<h3>Admin</h3>
-				  </div>
-				  <div class="pricing-table-price">
-					<div class="monthly-price">
-					  <div class="currency">$</div>
-					  <div class="amount">199</div>
-					</div>
-				  </div>
-				  <div class="pricing-table-body">
-					<ul class="monthly-features">
-					   <li> Lorem ipsum dolor sit amet</li>
-					   <li> Lorem ipsum dolor sit amet</li>
-					   <li> Lorem ipsum dolor sit amet</li>
-					   <li> Lorem ipsum dolor sit amet</li>
-					</ul>
-				  </div>
-				  <div class="pricing-table-footer">
-				  </div>
-				</div>
-				<!-- premium table end -->
-			  </div>
+		<div>
+			<div class="btn from-top">
+				<a href="#" class="wbutton">APPLY NOW</a>
 			</div>
 		</div>
-		<a href="#" class="wbutton">APPLY NOW</a>
 	</section>
 
 	<footer class="footer">
