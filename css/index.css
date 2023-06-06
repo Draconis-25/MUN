@@ -739,7 +739,7 @@ ul{
 	width: 400px;
 }
 
-@media(width: 560px){
+@media(max-width: 560px){
   .btn{
     width: 80%;
     padding: 1.4rem 10px;
