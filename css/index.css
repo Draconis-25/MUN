@@ -570,13 +570,13 @@ margin:auto;
 @media(max-width:767px) {
     .team-item {
         width: calc(100% - 30px);
-margin: auto;
+margin: auto 30px;
     }
 }
 
 .container {
     max-width: 1170px;
-    margin: auto;
+    margin: auto 30px;
 }
 
 ul {
