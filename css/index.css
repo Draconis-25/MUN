@@ -223,22 +223,14 @@ nav a {
     /* font-weight: 700; */
 }
 
-.wbutton::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: #f8dcbf;
-    display: block;
-    margin: auto;
-    transition: 0.3s;
-}
-
-.wbutton:hover::after {
-    width: 100%;
-}
-
 .mobileTitle {
     display: none;
+}
+
+@media(min-width: 750px) {
+    .mobile-navbar {
+        display: none;
+    }
 }
 
 @media(max-width: 750px) {
@@ -255,6 +247,7 @@ nav a {
         display: block;
     }
     nav {
+        transition: 0.2s;
         padding: 4% 6%;
         position: fixed;
         z-index: 1000;
