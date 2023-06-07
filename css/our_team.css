@@ -55,7 +55,7 @@
 
 .card {
     text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 4px 20px 7px;
+    box-shadow: rgba(248, 220, 191, 0.09) 0px 4px 20px 7px;
     display: flex;
     flex-direction: column;
     align-items: center;
