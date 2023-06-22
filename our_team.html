@@ -68,6 +68,7 @@
                 </label>
                 <p>Academy</p>
             </div>
+            <div id="here"></div>
             <div class="responsive-container-block container">
                 <p class="text-blk team-head-text">
                     Organization
@@ -201,6 +202,23 @@
             instagram: "#",
             team: "academy"
         }]
+
+        $(document).ready(function() {
+            $("#color_mode").on("change", function() {
+                var checked = this.checked;
+                const allContainer = document.createElement("div")
+
+                allContainer.className = "responsive-container-block"
+
+                if (!checked) {
+                    allContainer.id = "organization"
+                } else {
+                    allContainer.id = "academy"
+                }
+
+                document.getElementById("here").append(allContainer)
+            })
+        });
 
         window.onload = () => {
             members.map((member, i) => {
