@@ -21,10 +21,6 @@ html {
     -webkit-tap-highlight-color: transparent;
 }
 
-@font-face {
-    font-display: swap;
-}
-
 h1 {
     font-size: 30px;
     color: #f8dcbf;
@@ -563,14 +559,14 @@ img {
 @media(max-width:991px) {
     .team-item {
         width: calc(50% - 30px);
-margin: 30px auto;
+        margin: 30px auto;
     }
 }
 
 @media(max-width:767px) {
     .team-item {
         width: calc(100% - 30px);
-margin: 30px auto;
+        margin: 30px auto;
     }
 }
 

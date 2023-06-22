@@ -60,6 +60,14 @@
                 <div class="responsive-container-block" id="top">
                 </div>
             </div>
+            <div class="btn-container">
+                <p>Organization</p>
+                <label class="switch btn-color-mode-switch">
+						<input type="checkbox" name="color_mode" id="color_mode" value="1">
+						<label for="color_mode" class="btn-color-mode-switch-inner"></label>
+                </label>
+                <p>Academy</p>
+            </div>
             <div class="responsive-container-block container">
                 <p class="text-blk team-head-text">
                     Organization
@@ -67,6 +75,7 @@
                 <div class="responsive-container-block" id="organization">
                 </div>
             </div>
+
             <div class="responsive-container-block container">
                 <p class="text-blk team-head-text">
                     Academy
@@ -79,136 +88,119 @@
 
 
     <script>
-        const members = [
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Asoude Patsaman",
-                position: "Secretary General",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "top"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Abdullah Faruk Ayan",
-                position: "Director General",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "top"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Süleyman Taha Kaya",
-                position: "Head of PR",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "organization"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Fatma Betül Bulut",
-                position: "Deputy Head of PR",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "organization"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Yusuf Yavuzyiğit",
-                position: "Head of IT",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "organization"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Ahmet Esad Kocamış",
-                position: "Head of IT",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "organization"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Yüsra Demirhan",
-                position: "Head of Press",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "organization"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Esra Demir",
-                position: "Deputy Head of Press",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "organization"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Efe Furkan Ekşi",
-                position: "Head of Logistics",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "organization"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Süleyman Taha Kaya",
-                position: "Deputy Head of Logistics",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "organization"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Semiha Zülal Aytekin",
-                position: "Head of Admin",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "organization"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Murathan Yüksel",
-                position: "Head of Security",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "organization"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Davud Kaşıkara",
-                position: "Deputy Head of Security",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "organization"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Fatma Betül Bulut",
-                position: "Head of Entertainment",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "organization"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Berra Aktaş",
-                position: "Deputy Secretary General",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "academy"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-                name: "Miraç Emirhan Aydemir",
-                position: "Head of Crisis",
-                feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                instagram: "#",
-                team: "academy"
-            }
-        ]
+        const members = [{
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Asoude Patsaman",
+            position: "Secretary General",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "top"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Abdullah Faruk Ayan",
+            position: "Director General",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "top"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Süleyman Taha Kaya",
+            position: "Head of PR",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "organization"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Fatma Betül Bulut",
+            position: "Deputy Head of PR",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "organization"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Yusuf Yavuzyiğit",
+            position: "Head of IT",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "organization"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Ahmet Esad Kocamış",
+            position: "Head of IT",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "organization"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Yüsra Demirhan",
+            position: "Head of Press",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "organization"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Esra Demir",
+            position: "Deputy Head of Press",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "organization"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Efe Furkan Ekşi",
+            position: "Head of Logistics",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "organization"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Süleyman Taha Kaya",
+            position: "Deputy Head of Logistics",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "organization"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Semiha Zülal Aytekin",
+            position: "Head of Admin",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "organization"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Murathan Yüksel",
+            position: "Head of Security",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "organization"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Davud Kaşıkara",
+            position: "Deputy Head of Security",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "organization"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Fatma Betül Bulut",
+            position: "Head of Entertainment",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "organization"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Berra Aktaş",
+            position: "Deputy Secretary General",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "academy"
+        }, {
+            image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+            name: "Miraç Emirhan Aydemir",
+            position: "Head of Crisis",
+            feature: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            instagram: "#",
+            team: "academy"
+        }]
 
         window.onload = () => {
             members.map((member, i) => {
@@ -225,7 +217,7 @@
                 const variantIconWrapper = document.createElement("a")
                 const igIcon = document.createElement("span")
                 const variantIcon = document.createElement("span")
-                // create elements
+                    // create elements
 
                 // add classes
                 container.classList.add("responsive-cell-block")
@@ -249,12 +241,12 @@
                 feature.classList.add("feature-text")
 
                 icons.classList.add("social-icons")
-                
+
                 igIcon.classList.add("mdi")
                 igIcon.classList.add("mdi-instagram")
                 variantIcon.classList.add("mdi")
                 variantIcon.classList.add("mdi-link-variant")
-                // add classes
+                    // add classes
 
                 // write values
                 image.src = member.image
@@ -265,7 +257,7 @@
                 name.innerText = member.name
                 position.innerText = member.position
                 feature.innerText = member.feature
-                // write values
+                    // write values
 
                 // append
                 imageWrapper.append(image)
@@ -280,17 +272,17 @@
                 card.append(icons)
                 container.append(card)
                 document.getElementById(member.team).append(container)
-                // append
+                    // append
             })
         }
 
         // Auto hide navbar
 
         let navScroll = window.scrollY
-		window.onscroll = () => {
-			if(window.screen.width < 750 && navScroll > window.scrollY) $("nav").css("top", 0), navScroll = window.scrollY
-			else if(window.screen.width < 750 && navScroll < window.scrollY) $("nav").css("top", -100), navScroll = window.scrollY
-		}
+        window.onscroll = () => {
+            if (window.screen.width < 750 && navScroll > window.scrollY) $("nav").css("top", 0), navScroll = window.scrollY
+            else if (window.screen.width < 750 && navScroll < window.scrollY) $("nav").css("top", -100), navScroll = window.scrollY
+        }
 
         // Auto hide navbar
 
