@@ -540,17 +540,25 @@ img {
 }
 
 .team-item h3 {
-    font-size: 20px;
-    color: #000000;
+    /* font-size: 20px; */
+    color: #322F2F;
     margin: 25px 0 5px;
     font-weight: normal;
     text-transform: capitalize;
+    /* font-family: 'Staatliches', cursive; */
+}
+
+.team-item h3 a {
+    color: inherit;
+    font-family: 'Staatliches', cursive;
+    font-size: 25px;
 }
 
 .team-item p {
     font-size: 16px;
     color: #555555;
     text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -858,4 +866,8 @@ ul {
 
 body {
     --inv: #f8dcbf;
+}
+
+.main a {
+    color: #f8ebeb;
 }
