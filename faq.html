@@ -61,10 +61,10 @@
         // Auto hide navbar
 
         let navScroll = window.scrollY
-		window.onscroll = () => {
-			if(window.screen.width < 750 && navScroll > window.scrollY) $("nav").css("top", 0), navScroll = window.scrollY
-			else if(window.screen.width < 750 && navScroll < window.scrollY) $("nav").css("top", -100), navScroll = window.scrollY
-		}
+        window.onscroll = () => {
+            if (window.screen.width < 750 && navScroll > window.scrollY) $("nav").css("top", 0), navScroll = window.scrollY
+            else if (window.screen.width < 750 && navScroll < window.scrollY) $("nav").css("top", -100), navScroll = window.scrollY
+        }
 
         // Auto hide navbar
 
@@ -86,6 +86,9 @@
         }, {
             question: "Do I have to attend all sessions?",
             answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis saepe molestiae distinctio asperiores cupiditate consequuntur dolor ullam, iure eligendi harum eaque hic corporis debitis porro consectetur voluptate rem officiis architecto."
+        }, {
+            question: "What to do with the position papers though?",
+            answer: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis saepe molestiae distinctio asperiores cupiditate consequuntur dolor ullam, iure eligendi harum eaque hic corporis debitis porro consectetur voluptate rem officiis architecto."
         }, ]
 
         window.onload = () => {
@@ -96,7 +99,7 @@
                 const icon = document.createElement("i")
                 const pannel = document.createElement("div")
                 const answer = document.createElement("p")
-                // create element
+                    // create element
 
                 // add classes
                 questionContainer.classList.add("faq")
@@ -104,32 +107,32 @@
                 icon.classList.add("mdi")
                 icon.classList.add("mdi-chevron-down")
                 pannel.classList.add("pannel")
-                // add classes
+                    // add classes
 
                 // write values
                 button.innerText = question.question
                 answer.innerText = question.answer
-                // write values
+                    // write values
 
                 // create listeners
                 button.addEventListener("click", () => {
-					button.parentElement.classList.toggle("active")
-					button.classList.toggle("active")
-					if(button.classList.contains("active")) {
-						pannel.style.padding = "0 2rem 2.5rem 2rem"
-						answer.style.display = "block"
-						setTimeout(() => {
-							answer.style.opacity = 1
-						}, (question.answer.length / 2.5))
-						icon.style.transform = "rotate(180deg)"
-					} else {
-						answer.style.opacity = 0
-						pannel.style.padding = 0
-						answer.style.display = "none"
-						icon.style.transform = "rotate(0deg)"
-					}
-				})
-                // create listeners
+                        button.parentElement.classList.toggle("active")
+                        button.classList.toggle("active")
+                        if (button.classList.contains("active")) {
+                            pannel.style.padding = "0 2rem 2.5rem 2rem"
+                            answer.style.display = "block"
+                            setTimeout(() => {
+                                answer.style.opacity = 1
+                            }, (question.answer.length / 2.5))
+                            icon.style.transform = "rotate(180deg)"
+                        } else {
+                            answer.style.opacity = 0
+                            pannel.style.padding = 0
+                            answer.style.display = "none"
+                            icon.style.transform = "rotate(0deg)"
+                        }
+                    })
+                    // create listeners
 
                 // append
                 pannel.appendChild(answer)
@@ -137,7 +140,7 @@
                 questionContainer.appendChild(button)
                 questionContainer.appendChild(pannel)
                 document.getElementById("wrapper").appendChild(questionContainer)
-                // append
+                    // append
             })
         }
 
