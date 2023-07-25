@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Frequently asked questions page for Tevfik İleri Model United Nations Conference details">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>Our Team - ILERIMUN</title>
     <script src="jquery-3.6.4.min.js"></script>
 </head>
@@ -23,9 +24,9 @@
                 <ul>
                     <li><a onclick="toggleNavbar()" href="index.html#Committees">Committees</a></li>
                     <li><a onclick="toggleNavbar()" href="index.html#Details">Details</a></li>
-                    <li><a onclick="toggleNavbar()" href="faq.html" target="_blank">FAQ</a></li>
+                    <li><a onclick="toggleNavbar()" href="faq.html">FAQ</a></li>
                     <li><a onclick="toggleNavbar()" href="#">Our Team</a></li>
-                    <li><a onclick="toggleNavbar()" href="#" target="_blank">Apply Now</a></li>
+                    <li><a onclick="toggleNavbar()" href="#">Apply Now</a></li>
                 </ul>
             </div>
         </div>
@@ -40,11 +41,11 @@
             <div class="nav-links">
                 <!-- <i class="fa fa-times"></i> -->
                 <ul>
-                    <li><a href="index.html#Committees" target="_blank">Committees</a></li>
-                    <li><a href="index.html# Details" target="_blank">Details</a></li>
-                    <li><a href="faq.html" target="_blank">FAQ</a></li>
+                    <li><a href="index.html#Committees">Committees</a></li>
+                    <li><a href="index.html#Details">Details</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                     <li><a href="#">Our Team</a></li>
-                    <li><a href="#" target="_blank">Apply Now</a></li>
+                    <li><a href="#">Apply Now</a></li>
                 </ul>
             </div>
             <!-- <i class="fa fa-bars"></i> -->
@@ -60,16 +61,18 @@
                 <div class="responsive-container-block" id="top">
                 </div>
             </div>
+            <!-- toggle button -->
             <div class="btn-container">
                 <p>Organization</p>
                 <label class="switch btn-color-mode-switch">
-						<input type="checkbox" name="color_mode" id="color_mode" value="1">
-						<label for="color_mode" class="btn-color-mode-switch-inner"></label>
+					<input onchange="toggleTeamMembers()" type="checkbox" name="color_mode" id="color_mode" value="1">
+					<label for="color_mode" class="btn-color-mode-switch-inner"></label>
                 </label>
                 <p>Academy</p>
             </div>
+            <!-- toggle button -->
             <div id="here"></div>
-            <div class="responsive-container-block container">
+            <div id="organizationContainer" class="responsive-container-block container active">
                 <p class="text-blk team-head-text">
                     Organization
                 </p>
@@ -77,7 +80,7 @@
                 </div>
             </div>
 
-            <div class="responsive-container-block container">
+            <div style="display: none;" id="academyContainer" class="responsive-container-block container">
                 <p class="text-blk team-head-text">
                     Academy
                 </p>
@@ -89,6 +92,25 @@
 
 
     <script>
+        // academy/organization toggle
+        function toggleTeamMembers() {
+            if($("#organizationContainer").hasClass("active")) {
+                $("#organizationContainer").css("display", "none")
+                $("#academyContainer").css("display", "block")
+            } else if($("#academyContainer").hasClass("active")) {
+                $("#academyContainer").css("display", "none")
+                $("#organizationContainer").css("display", "block")
+            }
+
+            $("#academyContainer").addClass("animate__animated")
+            $("#academyContainer").addClass("animate__fadeIn")
+            $("#organizationContainer").addClass("animate__animated")
+            $("#organizationContainer").addClass("animate__fadeIn")
+            $("#organizationContainer").toggleClass("active")
+            $("#academyContainer").toggleClass("active")
+        }
+        // academy/organization toggle
+
         const members = [{
             image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
             name: "Asoude Patsaman",
@@ -202,23 +224,6 @@
             instagram: "#",
             team: "academy"
         }]
-
-        $(document).ready(function() {
-            $("#color_mode").on("change", function() {
-                var checked = this.checked;
-                const allContainer = document.createElement("div")
-
-                allContainer.className = "responsive-container-block"
-
-                if (!checked) {
-                    allContainer.id = "organization"
-                } else {
-                    allContainer.id = "academy"
-                }
-
-                document.getElementById("here").append(allContainer)
-            })
-        });
 
         window.onload = () => {
             members.map((member, i) => {
