@@ -364,12 +364,12 @@
                 $("#toggle").removeClass("mdi-menu")
                 $("#toggle").addClass("mdi-close")
                 $("body").css("overflow", "hidden")
-                document.getElementById("mobile-navbar").style.right = 0
+                $("#mobile-navbar").css("right", 0)
             } else if ($("#toggle").hasClass("mdi-close")) {
                 $("#toggle").removeClass("mdi-close")
                 $("#toggle").addClass("mdi-menu")
                 $("body").css("overflow", "visible")
-                document.getElementById("mobile-navbar").style.right = `-${screen.width}px`
+                $("#mobile-navbar").css("right", `-${screen.width}px`) 
             }
         }
 
